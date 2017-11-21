@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Add album</title>
+    <link rel="stylesheet" href="../stylesheets/colors.css">
+    <link rel="stylesheet" href="../stylesheets/basic.css">
+    <link rel="stylesheet" href="../stylesheets/add_album.css">
+  </head>
+  <body>
+    <form method="GET" action="../php/add_album.php" name="add_album">
+      <label>Album name</label>
+      <input type="text" name="name">
+
+      <label>Artist</label>
+      <input type="text" name="artist">
+
+      <label>Year</label>
+      <input type="number" name="year">
+
+      <label>Genre</label>
+      <input type="text" name="genre">
+
+      <label>Ranking</label>
+      <input type="number" name="ranking">
+
+      <label>Is it avaiable?</label>
+      <input type="checkbox" name="avaiable">
+
+      <label>Stock</label>
+      <input type="number" name="stock">
+
+      <label>Price</label>
+      <input type="number" name="price">
+
+      <input type="submit" value="add">
+    </form>
+  </body>
+</html>
