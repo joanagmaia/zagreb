@@ -9,6 +9,7 @@
   $loginVerif=array(0,0,0);
   $signupVerif=array(0,0);
   $register_boolean=false;
+  $name="";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -78,6 +79,7 @@
   }
 
   if($register_boolean) {
+    $name = $_GET["name"];
     if($signupVerif[0]==$nrow) {
       echo '
       <script language="javascript">
@@ -117,7 +119,7 @@
 
   if($sum==$nrow) {
     $insert = "INSERT INTO utilizador (id,type_admin,name,email,password,cliente_saldo)
-    VALUES ($sum,0,'Sara Silva','$email','$password',0);";
+    VALUES ($sum,0,'$name','$email','$password',0);";
 
     if ($conn->query($insert) === TRUE) {
       echo "New connection successfull";
