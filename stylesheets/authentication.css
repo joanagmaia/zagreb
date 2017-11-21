@@ -25,10 +25,6 @@ body {
   box-shadow: 1px 1px 10px lightgrey;
 }
 
-form {
-    margin-left: 2rem;
-}
-
 
 .form-auth input[type="text"] {
   border: none;
@@ -36,6 +32,13 @@ form {
   border-bottom-color: #CDC3BB;
   width: 70%;
   margin-bottom: 2rem;
+  color: #CDC3BB;
+  transition: ease-in 0.2s;
+}
+
+.form-auth input[type="text"]:focus {
+  outline: none;
+  color: black;
 }
 
 .form-auth input[type="submit"] {
@@ -48,6 +51,11 @@ form {
   font-weight: 400;
   font-size: 1rem;
   color: white;
+  transition: ease-in 0.2s;
+}
+
+.form-auth input[type="submit"]:hover {
+  background-color: #C96459;
 }
 
 .vinyl-button-wrapper {
@@ -84,4 +92,12 @@ form {
 
 .vinyl-wrapper-login:hover, .vinyl-wrapper-register:hover {
   cursor: pointer;
+}
+
+.login-input, .sign-up-input {
+  transition: ease-in 0.2s;
+}
+
+#mb-1 {
+  margin-bottom: 1rem;
 }

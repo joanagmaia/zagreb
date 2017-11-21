@@ -12,15 +12,14 @@
     <div class="auth-wrap">
       <div class="form-auth white-bg">
         <form method ="GET" action="../php/auth.php" name="auth_form">
-          <label class="dark-brown">email</label>
+          <input type="text" id="mb-1" name="name" value="name" class="sign-up-input">
           <br>
-          <input type="text" name="email">
+          <input type="text" name="email" value="email">
           <br>
-          <label class="dark-brown">password</label>
+          <input type="text" name="password" value="password">
           <br>
-          <input type="text" name="password">
-          <br>
-          <input class="dark-brown-bg" type="submit" name="submit" value="sign in">
+          <input class="dark-brown-bg login-input" type="submit" name="submit_login" value="sign in">
+          <input class="dark-brown-bg sign-up-input" type="submit" name="submit_register" value="register">
         </form>
     </div>
     <div class="vinyl-button-wrapper">
