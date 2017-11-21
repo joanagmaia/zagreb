@@ -21,7 +21,7 @@
   $year = $_GET["year"];
   $genre = $_GET["genre"];
   $ranking = $_GET["ranking"];
-  $avaiable = $_GET["avaiable"];
+  $available = $_GET["available"];
   $stock = $_GET["stock"];
   $price = $_GET["price"];
 
@@ -31,7 +31,7 @@
   if(!isset($name) || trim($name) == ''
   || !isset($artist) || trim($artist) == '' || !isset($year)
   || trim($year) == '' || !isset($genre) || trim($genre) == ''
-  || !isset($ranking) || trim($ranking) == '' || !isset($avaiable) || trim($avaiable) == ''
+  || !isset($ranking) || trim($ranking) == '' || !isset($available) || trim($available) == ''
   || !isset($stock) || trim($stock) == '' || !isset($price) || trim($price) == ''){
     echo '
     <script language="javascript">
@@ -58,12 +58,12 @@
     }
 
   if($sum == $row) {
-    if($avaiable=='on') {
-      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,avaiable,stock,price)
+    if($available=='on') {
+      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
     }
     else {
-      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,avaiable,stock,price)
+      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
