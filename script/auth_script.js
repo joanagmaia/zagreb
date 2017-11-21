@@ -1,3 +1,5 @@
+$('.login-input').css('display','none');
+$('.sign-up-input').css('display', 'block');
 $('.vinyl-wrapper-login').mouseenter(show_vinyl_login);
 $('.vinyl-wrapper-login').mouseleave(hide_vinyl_login);
 $('.vinyl-wrapper-register').mouseenter(show_vinyl_register);
