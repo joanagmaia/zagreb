@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Auth</title>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/authentication.css">
+    <link rel="stylesheet" href="../stylesheets/colors.css">
+    <link rel="stylesheet" href="../stylesheets/basic.css">
+  </head>
+  <body>
+    <div class="auth-wrap">
+      <div class="form-auth white-bg">
+        <form method ="GET" action="../php/auth.php" name="auth_form">
+          <label class="dark-brown">email</label>
+          <br>
+          <input type="text" name="email">
+          <br>
+          <label class="dark-brown">password</label>
+          <br>
+          <input type="text" name="password">
+          <br>
+          <input class="dark-brown-bg" type="submit" name="submit" value="sign in">
+        </form>
+    </div>
+    <div class="vinyl-button-wrapper">
+      <div class="vinyl-wrapper-login">
+        <div class="vinyl-login black-bg"></div>
+        <img src="../images/vinyl_cover.png"/>
+      </div>
+      <div class="vinyl-wrapper-register not-selected">
+        <div class="vinyl-register black-bg"></div>
+        <img src="../images/vinyl_cover.png"/>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/auth_script.js"></script>
+  </body>
+</html>

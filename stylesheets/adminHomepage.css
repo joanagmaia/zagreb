@@ -1,0 +1,120 @@
+
+.navbar {
+  height: 80px;
+  width: 100%;
+  background-color: #454851;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+#logo {
+  color: white;
+  margin-left: 48px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-right: 48px;
+}
+
+.menu_titles {
+  color: white;
+  margin: 0px 16px;
+}
+
+.left_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: : space-between;
+  height: 90%;
+  flex:2;
+  box-sizing: border-box;
+
+}
+
+.add_album, .edit_album, .remove_album {
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.add_album {
+  background-color: #B9CEE0;
+  margin: 48px;
+}
+
+.edit_album {
+  background-color: #E1E1DD;
+  margin: 0px 48px;
+}
+.remove_album {
+  background-color: #EAEBE8;
+  margin: 48px;
+}
+
+.right_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: : space-between;
+    height: 40%;
+    flex:1;
+    box-sizing: border-box;
+    margin-top: 32px;
+}
+
+.number_clients, .number_sales, .number_albums {
+  flex:1;
+  margin-top: 16px;
+  margin-right: 48px;
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxes_p {
+  color: #767676;
+  font-family: 'Effra', sans-serif;
+  font-size: 20px;
+  max-width: 50%;
+  margin-left: 48px;
+}
+
+.subtitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 30px;
+  color: black;
+  margin-left: 32px;
+  margin-bottom: 24px;
+}
+
+.number {
+  font-family: 'Effra', sans-serif;
+  font-size: 50px;
+  color: #CDC3BB;
+  margin-right: 32px;
+  margin-bottom: 24px;
+}
+
+.boxes_img {
+  margin-right: 48px;
+}
+
+.left_column div:hover {
+  transform: scale(1.02);
+  cursor: pointer
+}
