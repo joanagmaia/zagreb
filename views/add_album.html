@@ -40,9 +40,20 @@
             <label>Price</label>
             <input type="number" name="price">
           </div>
-          <input type="submit" value="add">
+          <div id="add_tracks">
+            <label>Name of the track</label>
+            <label>Duration</label>
+            <label>Number of tracks</label>
+            <input type="text" name="track_name[]" class="track_name">
+            <input type="number" name="track_duration[]" class="track_duration">
+            <p onclick="fds()" id="add_track">Add track</p>
+          </div>
+          <input type="submit" value="add album" id="add">
         </form>
+
+
       </div>
     </div>
+    <script type="text/javascript" src="../script/add_track.js"></script>
   </body>
 </html>

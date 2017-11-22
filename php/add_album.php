@@ -24,7 +24,8 @@
   $available = $_GET["available"];
   $stock = $_GET["stock"];
   $price = $_GET["price"];
-
+  $name_track = $_GET["track_name"];
+  $name_duration = $_GET["track_duration"];
   $sql_album = "SELECT * FROM album";
   $result = $conn->query($sql_album);
 
@@ -36,7 +37,7 @@
     echo '
     <script language="javascript">
     alert("You did not fill out the required fields.");
-    window.location.href="../views/authentication.html";
+    window.location.href="../views/add_album.html";
     </script>';
   }
     // output data of each row
@@ -47,7 +48,7 @@
           echo '
           <script language="javascript">
           alert("Already added this album!");
-          window.location.href="../views/authentication.html";
+          window.location.href="../views/add_album.html";
           </script>';
         }
 
@@ -61,17 +62,33 @@
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
+
     }
     else {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
+
+
+
   if ($conn->query($insert) === TRUE) {
     echo "New record created successfully";
   } else {
     echo "Error: " . $insert . "<br>" . $conn->error;
   }
+
+  for($i=0;$i<count($name_track);$i++){echo $i;
+    $sql = "INSERT INTO faixa (name,duracao,albumID,faixaID)
+
+    VALUES ('$name_track[$i]','$name_duration[$i]',$nrow, $i)";
+    if ($conn->query($sql) === TRUE) {
+      echo "New faixa created successfully";
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  }
+
 
 
 
