@@ -74,6 +74,16 @@ CREATE TABLE cliente_mensagem(
 	PRIMARY KEY(mensagem_message_id)
 );
 
+CREATE TABLE faixa (
+    name TEXT NOT NULL,
+    duracao FLOAT,
+    albumID int,
+    faixaID int,
+    PRIMARY KEY (faixaID),
+    CONSTRAINT FK_AlbumFaixa FOREIGN KEY (albumID)
+    REFERENCES album(id)
+);
+
 ALTER TABLE faixa ADD CONSTRAINT faixa_fk1 FOREIGN KEY (album_id) REFERENCES album(id);
 ALTER TABLE operacao_cliente ADD CONSTRAINT operacao_cliente_fk1 FOREIGN KEY (utilizador_id) REFERENCES utilizador(id);
 ALTER TABLE operacao_admin ADD CONSTRAINT operacao_admin_fk1 FOREIGN KEY (utilizador_id) REFERENCES utilizador(id);

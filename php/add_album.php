@@ -55,17 +55,22 @@
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
+
     }
     else {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
+
+
+
   if ($conn->query($insert) === TRUE) {
     echo "New record created successfully";
   } else {
     echo "Error: " . $insert . "<br>" . $conn->error;
   }
+
   for($i=0;$i<count($name_track);$i++){echo $i;
     $sql = "INSERT INTO faixa (name,duracao,albumID,faixaID)
     VALUES ('$name_track[$i]','$name_duration[$i]',$nrow, $i)";
