@@ -15,7 +15,7 @@ CREATE TABLE album(
 
 CREATE TABLE utilizador(
 	id		 NUMERIC(0,4),
-	type_admin	 BOOL,
+	type_admin	 BOOLEAN,
 	name		 TEXT NOT NULL,
 	email	 TEXT UNIQUE NOT NULL,
 	password	 CHAR(20) NOT NULL,

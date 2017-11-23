@@ -5,17 +5,13 @@
   $dbname = "zagreb_database";
   $sum = 0;
   $nrow = 0;
-
-
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
-
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   }
   echo "Connected successfully". "<br>";
-
   $name = $_GET["name"];
   $artist = $_GET["artist"];
   $year = $_GET["year"];
@@ -28,7 +24,6 @@
   $name_duration = $_GET["track_duration"];
   $sql_album = "SELECT * FROM album";
   $result = $conn->query($sql_album);
-
   if(!isset($name) || trim($name) == ''
   || !isset($artist) || trim($artist) == '' || !isset($year)
   || trim($year) == '' || !isset($genre) || trim($genre) == ''
@@ -51,13 +46,11 @@
           window.location.href="../views/add_album.html";
           </script>';
         }
-
         else {
           $sum+=1;
         }
       }
     }
-
   if($sum == $row) {
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
@@ -80,7 +73,6 @@
 
   for($i=0;$i<count($name_track);$i++){echo $i;
     $sql = "INSERT INTO faixa (name,duracao,albumID,faixaID)
-
     VALUES ('$name_track[$i]','$name_duration[$i]',$nrow, $i)";
     if ($conn->query($sql) === TRUE) {
       echo "New faixa created successfully";
@@ -88,8 +80,4 @@
       echo "Error: " . $sql . "<br>" . $conn->error;
   }
   }
-
-
-
-
 ?>
