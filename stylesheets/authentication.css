@@ -83,6 +83,12 @@ body {
   filter: grayscale(0%);
 }
 
+.vinyl-wrapper-login, .vinyl-wrapper-register {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
 .vinyl-wrapper-login img, .vinyl-wrapper-register img{
   width: 12rem;
   height: 12rem;
@@ -92,6 +98,13 @@ body {
 
 .vinyl-wrapper-login:hover, .vinyl-wrapper-register:hover {
   cursor: pointer;
+}
+
+.vinyl-text-login, .vinyl-text-register {
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+  padding: 1rem;
 }
 
 .login-input, .sign-up-input {
