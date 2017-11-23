@@ -79,7 +79,6 @@ CREATE TABLE faixa (
     duracao FLOAT,
     albumID int,
     faixaID int,
-    PRIMARY KEY (faixaID),
     CONSTRAINT FK_AlbumFaixa FOREIGN KEY (albumID)
     REFERENCES album(id)
 );
