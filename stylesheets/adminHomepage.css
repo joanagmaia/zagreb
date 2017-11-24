@@ -1,32 +1,4 @@
 
-.navbar {
-  height: 80px;
-  width: 100%;
-  background-color: #454851;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Maven Pro', sans-serif;
-}
-
-#logo {
-  color: white;
-  margin-left: 48px;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-#menu {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  margin-right: 48px;
-}
-
-.menu_titles {
-  color: white;
-  margin: 0px 16px;
-}
 
 .left_column {
   display: flex;
