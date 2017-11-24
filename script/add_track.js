@@ -1,5 +1,4 @@
-
-function fds () {
+function add () {
 var parent = document.getElementById('add_tracks');
   var input_name = document.createElement("input");
   var input_duration = document.createElement("input");
