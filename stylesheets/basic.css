@@ -79,14 +79,15 @@ input[type="submit"]:hover {
 }
 
 input {
+
   border: none;
   border-bottom: 1px solid GREEN;
   border-bottom-color: #CDC3BB;
   width: 70%;
-  margin-bottom: 2rem;
   color: #CDC3BB;
   transition: ease-in 0.2s;
   background-color: transparent;
+
 }
 
 input:focus {

@@ -1,0 +1,66 @@
+.search_bar {
+  display: flex;
+  flex:1;
+  margin: 80px 100px;
+  box-shadow: 4px 4px 4px rgba(156,156,156,0.5);
+}
+
+.search_bar input[type="search"] {
+  width: 100%;
+  border: none;
+  height: 80px;
+  padding: 0px 32px 0px 32px;
+  font-size: 24px;
+  background-color: white;
+
+}
+
+.search_bar input::placeholder {
+  color: #454851;
+}
+
+body {
+  background-color: #E1E1DD;
+}
+
+.listed_album {
+  display: flex;
+  flex:1;
+  margin: 32px 100px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Effra', sans-serif;
+  height: 100px;
+}
+
+.listed_album_info {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.listed_album_name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 32px;
+}
+
+.listed_album_info li {
+  padding: 0px 32px;
+}
+
+.listed_album_info li span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.listed_album_stock, .listed_album_price {
+  color: #E5939D;
+}
+
+.operation_checkbox {
+  width: 24px;
+  height: 24px;
+  margin-right: 32px;
+}
