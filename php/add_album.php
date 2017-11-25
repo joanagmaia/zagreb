@@ -55,7 +55,6 @@
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
-
     }
     else {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
@@ -66,7 +65,10 @@
 
 
   if ($conn->query($insert) === TRUE) {
-    echo "New record created successfully";
+    echo '
+    <script language="javascript">
+    window.location.href="../views/list_albums.html";
+    </script>';
   } else {
     echo "Error: " . $insert . "<br>" . $conn->error;
   }

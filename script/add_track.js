@@ -1,6 +1,5 @@
 function add () {
-var parent = document.getElementById('add_tracks_track');
-var parent2 = document.getElementById('add_tracks_duration');
+var parent = document.getElementById('add_tracks');
   var input_name = document.createElement("input");
   var input_duration = document.createElement("input");
   parent.appendChild(input_name);
