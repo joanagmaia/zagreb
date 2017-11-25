@@ -93,3 +93,7 @@ input:focus {
   outline: none;
   color: black;
 }
+
+a {
+  text-decoration: none;
+}

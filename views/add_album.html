@@ -59,14 +59,18 @@
               <label>Is it available?</label>
               <input type="checkbox" name="available">
             </div>
+            <h1 id="add-h1">Add tracks</h1>
             <div id="add_tracks">
-              <h1>Add tracks</h1>
-              <label>Name of the track</label>
-              <input type="text" name="track_name[]" class="track_name">
-              <label>Duration</label>
-              <input type="number" name="track_duration[]" class="track_duration">
-              <p onclick="add()" id="add_track">Add track</p>
+              <div class="add-tracks-track">
+                <label>Name of the track</label>
+                <input type="text" name="track_name[]" class="track_name">
+              </div>
+              <div class="add-tracks-duration">
+                <label>Duration</label>
+                <input type="number" name="track_duration[]" class="track_duration">
+              </div>
             </div>
+            <p onclick="add()" id="add_track">Add track</p>
             <input type="submit" value="add album" id="add">
           </form>
       </div>

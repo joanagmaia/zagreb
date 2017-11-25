@@ -25,7 +25,6 @@
 }
 
 #add_tracks input {
-  width: 70%;
   height: 2rem;
   background-color: white;
   border-radius: 0.3rem;
@@ -53,19 +52,31 @@
   background-color: #C96459;
 }
 
+#add-h1{
+  color: black;
+  margin-bottom: 1.2rem;
+}
+
 #add_tracks {
   background-color: #797D7E;
   color: white;
   display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  border-radius: 0.4rem;
-  width: 80%;
+  justify-content: space-between;
+  width: 100%;
 }
 
-#add_tracks h1 {
-  color: black;
-  margin-bottom: 1.2rem;
+.add-tracks-track, .add-tracks-duration {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2rem 0.5rem 2rem;
+}
+
+.add-tracks-track {
+  width: 100%;
+}
+
+.add-tracks-track input{
+  width: 95%;
 }
 
 #add_tracks p{
@@ -83,8 +94,4 @@
   color: white;
   cursor: pointer;
   border-bottom: 2px solid white;
-}
-
-.track_name {
-  padding-top: 1.2rem;
 }

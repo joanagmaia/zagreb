@@ -52,7 +52,6 @@
   align-items: flex-end;
 }
 
-
 main {
   display: flex;
   justify-content: space-between;
@@ -86,7 +85,7 @@ main {
   margin-right: 48px;
 }
 
-.left_column div:hover {
+.left_column a:hover {
   transform: scale(1.02);
   cursor: pointer
 }
