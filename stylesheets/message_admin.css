@@ -1,0 +1,34 @@
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.message-wrapper label {
+  margin-bottom: 0.5rem;
+}
+
+.message-wrapper input, .message-wrapper textarea {
+  border-radius: 0.3rem;
+  border: 1px solid #2D2D2D;
+  margin-bottom: 2rem;
+}
+
+.message-wrapper #title {
+  width: 30%;
+  padding: 0.6rem;
+}
+
+.message-wrapper textarea {
+  width: 80%;
+  height: 30%;
+  padding-top: 0.6rem;
+  padding-left: 0.6rem;
+}
+
+.message-wrapper input[type="submit"] {
+  width: 10%;
+  padding: 1rem;
+  border: none;
+
+}

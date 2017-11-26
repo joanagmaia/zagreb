@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../stylesheets/header.css">
   </head>
   <body>
+    <? php include '../php/list_albums.php'; ?>
     <header>
       <nav class="navbar">
         <p id="logo">ZAGREB</p>

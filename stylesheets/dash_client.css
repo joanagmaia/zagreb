@@ -1,0 +1,4 @@
+.recent-albuns, .recommended, .contact-us {
+  min-height: 50vh;
+  padding: 1rem 2rem;
+}

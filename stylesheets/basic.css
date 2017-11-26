@@ -21,11 +21,15 @@ h2 {
 }
 
 h3 {
-
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
-span {
-
+span, li {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 p {
@@ -38,14 +42,9 @@ label {
   font-weight: 400;
 }
 
-input[type="text"] {
-  font-size: 1rem;
-}
-
-input[type="submit"] {
-  cursor: pointer;
-}
-
+input[type="text"] { font-size: 1rem; }
+input[type="submit"] { cursor: pointer; }
+input[type="submit"]:hover { background-color: #C96459; }
 input[type="submit"] {
   border: none;
   border-radius: 0;
@@ -59,9 +58,6 @@ input[type="submit"] {
   transition: ease-in 0.2s;
 }
 
-input[type="submit"]:hover {
-  background-color: #C96459;
-}
 
 .header {
   margin: 4rem 2rem;

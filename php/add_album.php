@@ -67,7 +67,7 @@
   if ($conn->query($insert) === TRUE) {
     echo '
     <script language="javascript">
-    window.location.href="../views/list_albums.html";
+    window.location.href="../views/search.php";
     </script>';
   } else {
     echo "Error: " . $insert . "<br>" . $conn->error;
