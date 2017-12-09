@@ -147,7 +147,7 @@
 
   if($sum==$nrow) {
     $insert = "INSERT INTO utilizador (id,type_admin,name,email,password,cliente_saldo,active,id_activation)
-    VALUES ($sum,0,'$name','$email','$password',0,0,'$hash');";
+    VALUES ($sum,0,'$name','$email','$password',20,0,'$hash');";
 
     if ($conn->query($insert) === TRUE) {
       echo "New connection successfull2";
