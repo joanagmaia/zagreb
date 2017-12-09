@@ -15,7 +15,7 @@
 
           <input type="text" id="mb-1" name="name" value="name" class="sign-up-input">
           <br>
-          <input type="text" name="email" value="email">
+          <input type="email" name="email" value="email">
           <br>
           <input type="password" name="password" value="password">
           <br>
