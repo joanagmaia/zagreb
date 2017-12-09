@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/header.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <header>
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
