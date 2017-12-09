@@ -14,6 +14,7 @@
   $headers="From: ssaracome@gmail.com";
   $msg="";
   $hash="";
+  $type_admin="";
 
   session_start();
   $_SESSION['loggedin']=false;
@@ -53,10 +54,7 @@
     header('Location: '.'../views/authentication.php');
   }
 
-  //Save username at localStorage
-  echo "<script language='javascript'>
-  localStorage.setItem('username', '".$email."');
-  </script>";
+
 
   $sql = "SELECT * FROM utilizador";
   $result = $conn->query($sql);
@@ -70,6 +68,12 @@
       if (isset($_GET["submit_login"])) {
         if($row['email'] == $email && $row['password'] == $password && $row['active']==true){
           $loginVerif[0]=1;
+          $type_admin=$row['type_admin'];
+          //Save username at localStorage
+          $_SESSION['user']=$row['name'];
+          $_SESSION['type_admin']=$type_admin;
+          $_SESSION['cliente_saldo']=$row['cliente_saldo'];
+
         }
         if($row['email'] == $email && $row['password'] == $password && $row['active']==false){
           //alertar confirmar email
@@ -112,6 +116,7 @@
     $name = $_GET["name"];
     if($signupVerif[0]==$nrow) {
       $_SESSION['email']=$email;
+
       $hash = md5( rand(0,1000) );
       $to="ssaracome@gmail.com";
       $msg = 'Click on this link to verify your account
@@ -132,9 +137,11 @@
       $_SESSION['loggedin']=true;
       $_SESSION['email']=$email;
       $idd=createId();
-
       $_SESSION['id']=$idd;
-      header('Location: '.'../views/adminHomepage.php?id='.$idd);
+      if($type_admin==1)
+        header('Location: '.'../views/adminHomepage.php?id='.$idd);
+      if($type_admin==0)
+        header('Location: '.'../views/dash_client.php?id='.$idd);
 
     }
     if($loginVerif[1]==1) {
@@ -147,7 +154,7 @@
 
   if($sum==$nrow) {
     $insert = "INSERT INTO utilizador (id,type_admin,name,email,password,cliente_saldo,active,id_activation)
-    VALUES ($sum,0,'$name','$email','$password',0,0,'$hash');";
+    VALUES ($sum,0,'$name','$email','$password',20,0,'$hash');";
 
     if ($conn->query($insert) === TRUE) {
       echo "New connection successfull2";

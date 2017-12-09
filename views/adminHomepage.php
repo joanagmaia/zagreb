@@ -14,7 +14,11 @@
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
         <ul id="menu">
-          <li class="menu_titles" id="username">username</li>
+          <?php
+            if($_SESSION['type_admin']==0)
+              echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>"
+          ?>
+          <li class="menu_titles" id="username"><?php echo $_SESSION['user']?></li>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
           <a href="authentication.php">
@@ -53,7 +57,9 @@
         </div>
       </div>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../script/localSession.js"></script>
+    <?php
+    echo '
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>'
+    ?>
   </body>
 </html>

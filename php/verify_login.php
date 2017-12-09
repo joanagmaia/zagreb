@@ -11,7 +11,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully". "<br>";
 
 
 
@@ -47,11 +46,8 @@ echo "Connected successfully". "<br>";
 
 $sql = "SELECT active FROM utilizador WHERE email=".$_SESSION['email'];
 $result = $conn->query($sql);
-echo $sql;
-echo $result;
   if($sql) {
     if($_SESSION['loggedin'] && $_GET['id']==$_SESSION['id']) {
-      echo "entraste";
     } else {
       header('Location: '.'../views/authentication.php');
     }
