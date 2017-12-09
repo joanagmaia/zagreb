@@ -16,7 +16,7 @@
           <li class="menu_titles" id="username">username</li>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
-          <a href="authentication.html">
+          <a href="authentication.php">
             <li id="logout" class="menu_titles">Logout</li>
           </a>
         </ul>
@@ -24,7 +24,7 @@
     </header>
     <main>
       <div class="left_column">
-        <a href="add_album.html" class="add_album">
+        <a href="add_album"  class="add_album">
           <p class="boxes_p">Add albums and all their tracks. Choose the best picture you have of it.</p>
           <img class="boxes_img" src="../public/add.png">
         </a>
@@ -32,7 +32,7 @@
           <p class="boxes_p">Edit all your albums, change the price, their stock and their description.</p>
           <img class="boxes_img" src="../public/edit.png">
         </a>
-        <a href="remove_album" class="remove_album">
+        <a href="remove_album"class="remove_album">
           <p class="boxes_p">Out of stock? Deactivate one of your albums.</p>
           <img class="boxes_img" src="../public/remove.png">
         </a>

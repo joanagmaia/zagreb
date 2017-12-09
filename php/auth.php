@@ -11,6 +11,10 @@
   $register_boolean=false;
   $name="";
 
+  $to="ssaracome@gmail.com";
+  $headers="From: ssaracome@gmail.com";
+  $msg = "Olá";
+
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -85,6 +89,7 @@
       <script language="javascript">
       window.location.href="../views/adminHomepage.html";
       </script>';
+      mail($to, "Teste", $msg, $headers)or die("mail error");
     }
     if($signupVerif[1]==1) {
       echo '
