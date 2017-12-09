@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="../stylesheets/album_page.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
-      <a href="dash_client.html"><p id="logo">ZAGREB</p></a>
+      <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
       <ul id="menu">
-        <a href="profile_client.html"><li class="menu_titles" id="username">username</li></a>
+        <a href="profile_client.php"><li class="menu_titles" id="username">username</li></a>
         <li class="menu_titles">Search</li>
         <li class="menu_titles">Message</li>
-        <a href="authentication.html">
+        <a href="authentication.php">
           <li id="logout" class="menu_titles">Logout</li>
         </a>
       </ul>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/header.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <header>
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
@@ -17,7 +18,7 @@
           <li class="menu_titles" id="username">username</li>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
-          <a href="authentication.html">
+          <a href="authentication.php">
             <li id="logout" class="menu_titles">Logout</li>
           </a>
         </ul>
@@ -70,7 +71,7 @@
                 <input type="number" name="track_duration[]" class="track_duration">
               </div>
             </div>
-            <p onclick="add()" id="add_track">Add track</p>
+            <p id="add_track">Add track</p>
             <input type="submit" value="add album" id="add">
           </form>
       </div>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/album_page.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
       <a href="dash_client.html"><p id="logo">ZAGREB</p></a>
       <ul id="menu">
