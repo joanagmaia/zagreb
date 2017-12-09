@@ -14,7 +14,10 @@
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
         <ul id="menu">
-          <li class="menu_titles" id="username">username</li>
+          <?php
+          $valid_id = $_SESSION['id'];
+          ?>
+          <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo">ZAGREB</p></a>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
           <a href="authentication.php">

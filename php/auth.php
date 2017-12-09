@@ -59,7 +59,7 @@
 
   //Save username at localStorage
   echo "<script language='javascript'>
-  localStorage.setItem('username', '".$email."');
+  localStorage.setItem('username', '".$name."');
   </script>";
 
   $sql = "SELECT * FROM utilizador";

@@ -15,7 +15,7 @@
     <nav class="navbar">
       <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
       <ul id="menu">
-        <a href="profile_client.php"><li class="menu_titles" id="username">username</li></a>
+        <li class="menu_titles" id="username">username</li>
         <li class="menu_titles">Search</li>
         <li class="menu_titles">Message</li>
         <a href="authentication.php">

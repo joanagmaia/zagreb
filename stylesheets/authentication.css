@@ -25,7 +25,13 @@ body {
   box-shadow: 1px 1px 10px lightgrey;
 }
 
-input[type="submit"] {
+input[type="email"], input[type="password"] {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input[type="submit"], input[type="text"] {
   width: 100%;
 }
 

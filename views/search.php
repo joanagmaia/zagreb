@@ -46,6 +46,7 @@
         </div>
       <?php } ?>
       </div>
+      <button class="remove-album">Remove Album</button>
     </main>
   </body>
 </html>

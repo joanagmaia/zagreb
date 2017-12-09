@@ -75,7 +75,6 @@ input[type="submit"] {
 }
 
 input {
-
   border: none;
   border-bottom: 1px solid GREEN;
   border-bottom-color: #CDC3BB;
@@ -83,7 +82,6 @@ input {
   color: #CDC3BB;
   transition: ease-in 0.2s;
   background-color: transparent;
-
 }
 
 input:focus {
