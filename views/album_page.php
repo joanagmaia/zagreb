@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/album_page.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
       <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
       <ul id="menu">
@@ -24,25 +25,28 @@
     <div class="header">
       <h3>Album name</h3>
     </div>
-    <div class="album-wrapper">
-      <div class="album-image pale-brown-bg">
-        <div class="add-to-cart">
+    <main>
+      <div class="album-wrapper">
+        <div class="album-image pale-brown-bg">
+          <div class="add-to-cart">
+          </div>
         </div>
-      </div>
-      <div class="album-info">
-        <div class="basic-info">
-          <h3>Artist</h3>
-          <h3>Genre</h3>
-          <h3>Year</h3>
-        </div>
-        <div class="tracklist">
-          <h3>Tracklist</h3>
-          <div class="track dark-brown-bg">
+        <div class="album-info">
+          <div class="basic-info">
+            <h3>Artist</h3>
+            <p>a</p>
+            <h3>Genre</h3>
+            <p>a</p>
+            <h3>Year</h3>
+            <p>a</p>
+          </div>
+          <div class="tracklist">
+            <h3>Tracklist</h3>
+            <div class="track dark-brown-bg">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <main>
     </main>
   </body>
 </html>

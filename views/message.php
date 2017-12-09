@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/message_admin.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
       <p id="logo">ZAGREB</p>
       <ul id="menu">
