@@ -10,6 +10,31 @@
   $signupVerif=array(0,0);
   $register_boolean=false;
   $name="";
+  $to="";
+  $headers="From: ssaracome@gmail.com";
+  $msg="";
+  $hash="";
+
+  session_start();
+  $_SESSION['loggedin']=false;
+
+  function createId() {
+
+      $chars = "abcdefghijkmnopqrstuvwxyz023456789";
+      srand((double)microtime()*1000000);
+      $i = 0;
+      $pass = '' ;
+
+      while ($i <= 7) {
+          $num = rand() % 33;
+          $tmp = substr($chars, $num, 1);
+          $pass = $pass . $tmp;
+          $i++;
+      }
+
+      return $pass;
+
+  }
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,11 +50,7 @@
 
   //Check if fields are filled
   if(!isset($email) || trim($email) == '' || !isset($password) || trim($password) == '') {
-    echo '
-    <script language="javascript">
-    alert("You did not fill out the required fields.");
-    window.location.href="../views/authentication.html";
-    </script>';
+    header('Location: '.'../views/authentication.php');
   }
 
   //Save username at localStorage
@@ -47,8 +68,14 @@
       //login
       //check if email is in database
       if (isset($_GET["submit_login"])) {
-        if($row['email'] == $email && $row['password'] == $password){
+        if($row['email'] == $email && $row['password'] == $password && $row['active']==true){
           $loginVerif[0]=1;
+        }
+        if($row['email'] == $email && $row['password'] == $password && $row['active']==false){
+          //alertar confirmar email
+          echo "<script language='javascript'>
+          alert('validate your account');
+          </script>";
         }
 
         if($row['email'] == $email && $row['password'] != $password){
@@ -67,8 +94,11 @@
           $signupVerif[1]=1;
         }
         if($row['email'] != $email){
+
+          //É AQUI O CÓDIGO PARA MANDAR O EMAIL. CRIAS UM ID E GUARDAS NA SESSION, ASSIM COMO O URL
           $signupVerif[0]+=1;
           $sum += 1;
+
         }
       }
     }
@@ -81,48 +111,46 @@
   if($register_boolean) {
     $name = $_GET["name"];
     if($signupVerif[0]==$nrow) {
-      echo '
-      <script language="javascript">
-      window.location.href="../views/adminHomepage.html";
-      </script>';
+      $_SESSION['email']=$email;
+      $hash = md5( rand(0,1000) );
+      $to="ssaracome@gmail.com";
+      $msg = 'Click on this link to verify your account
+
+      Username: '.$name.'
+      Password: '.$password.'
+
+      http://localhost/zagreb/views/adminHomepage.php?email='.$email.'&hash='.$hash.'
+      ';
+      mail($to, "teste", $msg, $headers) or die ("mail error");
     }
     if($signupVerif[1]==1) {
-      echo '
-      <script language="javascript">
-      alert("user already exists!");
-      window.location.href="../views/authentication.html";
-      </script>';
+      header('Location: '.'../views/authentication.php');
     }
   } else {
     if($loginVerif[0]==1) {
-      echo '
-      <script language="javascript">
-      alert("Youre in bro");
-      window.location.href="../views/adminHomepage.html";
-      </script>';
+
+      $_SESSION['loggedin']=true;
+      $_SESSION['email']=$email;
+      $idd=createId();
+
+      $_SESSION['id']=$idd;
+      header('Location: '.'../views/adminHomepage.php?id='.$idd);
+
     }
     if($loginVerif[1]==1) {
-      echo '
-      <script language="javascript">
-      alert("Wrong password");
-      window.location.href="../views/authentication.html";
-      </script>';
+      header('Location: '.'../views/authentication.php');
     }
     if($loginVerif[2]==$nrow) {
-      echo '
-      <script language="javascript">
-      alert("Youre not registered in the plataform!");
-      window.location.href="../views/authentication.html";
-      </script>';
+      header('Location: '.'../views/authentication.php');
     }
   }
 
   if($sum==$nrow) {
-    $insert = "INSERT INTO utilizador (id,type_admin,name,email,password,cliente_saldo)
-    VALUES ($sum,0,'$name','$email','$password',0);";
+    $insert = "INSERT INTO utilizador (id,type_admin,name,email,password,cliente_saldo,active,id_activation)
+    VALUES ($sum,0,'$name','$email','$password',0,0,'$hash');";
 
     if ($conn->query($insert) === TRUE) {
-      echo "New connection successfull";
+      echo "New connection successfull2";
     } else {
       echo "Error: " . $insert . "<br>" . $conn->error;
     }

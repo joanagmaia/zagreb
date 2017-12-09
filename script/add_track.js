@@ -1,4 +1,4 @@
-function add () {
+
 var parent = document.getElementById('add_tracks');
   var input_name = document.createElement("input");
   var input_duration = document.createElement("input");
@@ -18,4 +18,3 @@ var parent = document.getElementById('add_tracks');
       input[i].setAttribute("class", "track_duration");
     }
   }
-}

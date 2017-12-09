@@ -16,7 +16,7 @@
         <li class="menu_titles" id="username">username</li>
         <li class="menu_titles">Search</li>
         <li class="menu_titles">Message</li>
-        <a href="authentication.html">
+        <a href="authentication.php">
           <li id="logout" class="menu_titles">Logout</li>
         </a>
       </ul>
