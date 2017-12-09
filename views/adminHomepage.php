@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../stylesheets/header.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php'; ?>
     <header>
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
@@ -24,15 +25,15 @@
     </header>
     <main>
       <div class="left_column">
-        <a href="add_album"  class="add_album">
+        <a href="add_album.php" class="add_album">
           <p class="boxes_p">Add albums and all their tracks. Choose the best picture you have of it.</p>
           <img class="boxes_img" src="../public/add.png">
         </a>
-        <a href="edit_album" class="edit_album">
+        <a href="#" class="edit_album">
           <p class="boxes_p">Edit all your albums, change the price, their stock and their description.</p>
           <img class="boxes_img" src="../public/edit.png">
         </a>
-        <a href="remove_album"class="remove_album">
+        <a href="#" class="remove_album">
           <p class="boxes_p">Out of stock? Deactivate one of your albums.</p>
           <img class="boxes_img" src="../public/remove.png">
         </a>
