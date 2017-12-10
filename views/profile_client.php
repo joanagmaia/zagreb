@@ -13,11 +13,11 @@
   <body>
     <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
-      <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
+      <p id="logo">ZAGREB</p>
       <ul id="menu">
         <?php
           if($_SESSION['type_admin']==0)
-            echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>"
+            echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
             $valid_id = $_SESSION['id'];
         ?>
         <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
