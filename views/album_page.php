@@ -11,12 +11,13 @@
   </head>
   <body>
     <?php include '../php/verify_login.php'; ?>
+    <?php include '../php/album_info.php'; ?>
     <nav class="navbar">
       <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
       <ul id="menu">
         <?php
           if($_SESSION['type_admin']==0)
-            echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>"
+            echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
         ?>
         <a href="profile_client.php"><li class="menu_titles" id="username"><?php echo $_SESSION['user']?></li></a>
         <li class="menu_titles">Search</li>
@@ -27,7 +28,7 @@
       </ul>
     </nav>
     <div class="header">
-      <h3>Album name</h3>
+      <h3><?php echo $album_name; ?></h3>
     </div>
     <main>
       <div class="album-wrapper">
@@ -38,11 +39,11 @@
         <div class="album-info">
           <div class="basic-info">
             <h3>Artist</h3>
-            <p>a</p>
+            <p id="artist"><?php echo $artist; ?></p>
             <h3>Genre</h3>
-            <p>a</p>
+            <p id="genre"><?php echo $genre; ?></p>
             <h3>Year</h3>
-            <p>a</p>
+            <p id="year"><?php echo $year; ?></p>
           </div>
           <div class="tracklist">
             <h3>Tracklist</h3>

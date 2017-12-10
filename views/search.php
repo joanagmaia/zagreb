@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../stylesheets/list_albums.css">
   </head>
   <body>
+    <?php include '../php/verify_login.php';?>
     <?php include '../php/list_albums.php';?>
     <header>
       <nav class="navbar">
@@ -16,9 +17,10 @@
         <ul id="menu">
           <?php
             if($_SESSION['type_admin']==0)
-              echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>"
+              echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
+              $valid_id = $_SESSION['id'];
           ?>
-          <li class="menu_titles" id="username"><?php echo $_SESSION['user']?></li>
+          <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
           <a href="authentication.php">
@@ -31,10 +33,12 @@
       <div class="search_bar">
         <input type="search" name="search bar" placeholder="search the album name">
       </div>
+      <a href="#" id="fds">
       <div id="list_albums">
         <?php
         for($i=0;$i<count($name);$i++){
         ?>
+
         <div class="listed_album">
           <div>
             <p class="listed_album_name">
@@ -48,9 +52,12 @@
           </div>
           <input type="checkbox" name="operation_checkbox" class="operation_checkbox">
         </div>
+      </a>
       <?php } ?>
       </div>
       <button class="remove-album">Remove Album</button>
     </main>
+    <?php echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/info_url.js"></script>'; ?>
   </body>
 </html>
