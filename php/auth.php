@@ -77,6 +77,7 @@
           $_SESSION['user']=$row['name'];
           $_SESSION['type_admin']=$type_admin;
           $_SESSION['cliente_saldo']=$row['cliente_saldo'];
+          $_SESSION['cliente_id']=$row['id'];
 
         }
         if($row['email'] == $email && $row['password'] == $password && $row['active']==false){

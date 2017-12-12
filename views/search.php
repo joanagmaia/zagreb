@@ -33,11 +33,12 @@
       <div class="search_bar">
         <input type="search" name="search bar" placeholder="search the album name">
       </div>
+      <?php
+      for($i=0;$i<count($name);$i++){
+      ?>
       <a href="#" id="fds">
       <div id="list_albums">
-        <?php
-        for($i=0;$i<count($name);$i++){
-        ?>
+
 
         <div class="listed_album">
           <div>

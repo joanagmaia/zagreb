@@ -84,6 +84,33 @@ CREATE TABLE faixa (
     REFERENCES album(id)
 );
 
+CREATE TABLE carrinho(
+ id BIGINT,
+
+ PRIMARY KEY(id)
+);
+
+CREATE TABLE carrinho(
+	id INT,
+    data_transition DATE,
+    price FLOAT,
+    quantidade INT,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE album_carrinho(
+	album_id	 INTEGER,
+	carrinho_id BIGINT,
+
+	PRIMARY KEY(album_id,carrinho_id)
+);
+
+ALTER TABLE carrinho ADD CONSTRAINT carrinho_fk1 FOREIGN KEY (album_id) REFERENCES album(id);
+ALTER TABLE carrinho ADD CONSTRAINT carrinho_fk2 FOREIGN KEY (client_id) REFERENCES utilizador(id);
+
+ALTER TABLE album_carrinho ADD CONSTRAINT album_carrinho_fk1 FOREIGN KEY (album_id) REFERENCES album(id);
+ALTER TABLE album_carrinho ADD CONSTRAINT album_carrinho_fk2 FOREIGN KEY (carrinho_id) REFERENCES carrinho(id);
+
 ALTER TABLE faixa ADD CONSTRAINT faixa_fk1 FOREIGN KEY (album_id) REFERENCES album(id);
 ALTER TABLE operacao_cliente ADD CONSTRAINT operacao_cliente_fk1 FOREIGN KEY (utilizador_id) REFERENCES utilizador(id);
 ALTER TABLE operacao_admin ADD CONSTRAINT operacao_admin_fk1 FOREIGN KEY (utilizador_id) REFERENCES utilizador(id);
