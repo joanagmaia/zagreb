@@ -12,7 +12,6 @@
   padding: 0px 32px 0px 32px;
   font-size: 24px;
   background-color: white;
-
 }
 
 .search_bar input::placeholder {
@@ -26,12 +25,13 @@ body {
 .listed_album {
   display: flex;
   flex:1;
-  margin: 32px 100px;
+  margin: 1rem;
+  border-radius: 0.2rem;
   background-color: white;
   justify-content: space-between;
   align-items: center;
   font-family: 'Effra', sans-serif;
-  height: 100qpx;
+  height: 100px;
 }
 
 .listed_album_info {
@@ -63,4 +63,12 @@ body {
   width: 24px;
   height: 24px;
   margin-right: 32px;
+}
+
+.remove-input {
+  display: none;
+}
+
+#remove-album, #inactive-album {
+  background-color: 
 }
