@@ -12,7 +12,7 @@
   <body>
     <?php include '../php/verify_login.php'; ?>
     <header>
-      <nav class="navbar">
+        <nav class="navbar">
         <p id="logo">ZAGREB</p>
         <ul id="menu">
           <?php

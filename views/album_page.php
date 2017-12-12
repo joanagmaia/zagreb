@@ -11,24 +11,25 @@
   </head>
   <body>
     <?php include '../php/verify_login.php'; ?>
-    <<nav class="navbar">
-      <p id="logo">ZAGREB</p>
-      <ul id="menu">
-        <?php
-          if($_SESSION['type_admin']==0)
-            echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
-            $valid_id = $_SESSION['id'];
-        ?>
-        <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
-        <li class="menu_titles">Search</li>
-        <li class="menu_titles">Message</li>
-        <a href="authentication.php">
-          <li id="logout" class="menu_titles">Logout</li>
-        </a>
-      </ul>
-    </nav>
+    <?php include '../php/album_info.php'; ?>
+      <nav class="navbar">
+        <p id="logo">ZAGREB</p>
+        <ul id="menu">
+          <?php
+            if($_SESSION['type_admin']==0)
+              echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
+              $valid_id = $_SESSION['id'];
+          ?>
+          <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
+          <li class="menu_titles">Search</li>
+          <li class="menu_titles">Message</li>
+          <a href="authentication.php">
+            <li id="logout" class="menu_titles">Logout</li>
+          </a>
+        </ul>
+      </nav>
     <div class="header">
-      <h3>Album name</h3>
+      <h3><?php echo $album_name; ?></h3>
     </div>
     <main>
       <div class="album-wrapper">
@@ -39,11 +40,11 @@
         <div class="album-info">
           <div class="basic-info">
             <h3>Artist</h3>
-            <p>a</p>
+            <p id="artist"><?php echo $artist; ?></p>
             <h3>Genre</h3>
-            <p>a</p>
+            <p id="genre"><?php echo $genre; ?></p>
             <h3>Year</h3>
-            <p>a</p>
+            <p id="year"><?php echo $year; ?></p>
           </div>
           <div class="tracklist">
             <h3>Tracklist</h3>

@@ -33,10 +33,12 @@
       <div class="search_bar">
         <input type="search" name="search bar" placeholder="search the album name">
       </div>
+      <a href="#" id="fds">
       <div id="list_albums">
         <?php
         for($i=0;$i<count($name);$i++){
         ?>
+
         <div class="listed_album">
           <div>
             <p class="listed_album_name">
@@ -50,10 +52,13 @@
           </div>
           <input type="checkbox" name="operation_checkbox" class="operation_checkbox">
         </div>
+      </a>
       <?php } ?>
       </div>
       <button type =""class="remove-album">Remove Album</button>
     </main>
+    <?php echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/info_url.js"></script>'; ?>
     <script src="../script/remove_album.js"></script>
   </body>
 </html>
