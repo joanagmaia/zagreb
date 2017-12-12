@@ -67,16 +67,16 @@
             </div>
             <h1 id="add-h1">Add tracks</h1>
             <div id="add_tracks">
-              <div class="add-tracks-track">
-                <label>Name of the track</label>
-                <input type="text" name="track_name[]" class="track_name">
-              </div>
-              <div class="add-tracks-duration">
-                <label>Duration</label>
-                <input type="number" name="track_duration[]" class="track_duration">
+              <div id="track">
+                <div class="track-name">
+                  <input type="text" name="track_name[]" class="track_name" placeholder="Name">
+                </div>
+                <div class="track-duration">
+                  <input type="number" name="track_duration[]" class="track_duration" placeholder="Duration">
+                </div>
               </div>
             </div>
-            <p id="add_track">Add track</p>
+            <p id="add_track_button">Add track</p>
             <input type="submit" value="add album" id="add">
           </form>
       </div>
