@@ -13,7 +13,7 @@
   <body>
     <?php include '../php/verify_login.php'; ?>
     <nav class="navbar">
-      <a href="dash_client.php"><p id="logo">ZAGREB</p></a>
+      <p id="logo">ZAGREB</p>
       <ul id="menu">
         <?php
           if($_SESSION['type_admin']==0)

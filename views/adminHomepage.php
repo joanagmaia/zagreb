@@ -30,7 +30,7 @@
     </header>
     <main>
       <div class="left_column">
-        <a href="add_album.php" class="add_album">
+        <a href="add_album.php?id=<?php echo $valid_id; ?>" class="add_album">
           <p class="boxes_p">Add albums and all their tracks. Choose the best picture you have of it.</p>
           <img class="boxes_img" src="../public/add.png">
         </a>

@@ -55,9 +55,10 @@
       </a>
       <?php } ?>
       </div>
-      <button class="remove-album">Remove Album</button>
+      <button type =""class="remove-album">Remove Album</button>
     </main>
     <?php echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../script/info_url.js"></script>'; ?>
+    <script src="../script/remove_album.js"></script>
   </body>
 </html>

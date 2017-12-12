@@ -12,14 +12,15 @@
   <body>
     <?php include '../php/verify_login.php'; ?>
     <header>
-      <nav class="navbar">
+        <nav class="navbar">
         <p id="logo">ZAGREB</p>
         <ul id="menu">
           <?php
             if($_SESSION['type_admin']==0)
               echo "<li class='menu_titles' id='saldo'>saldo: ".$_SESSION['cliente_saldo']."</li>";
+              $valid_id = $_SESSION['id'];
           ?>
-          <li class="menu_titles" id="username"><?php echo $_SESSION['user']?></li>
+          <a href="adminHomepage.php?id=<?php echo $valid_id; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
           <li class="menu_titles">Search</li>
           <li class="menu_titles">Message</li>
           <a href="authentication.php">
