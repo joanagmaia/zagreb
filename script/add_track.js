@@ -1,20 +1,36 @@
+var button = document.getElementById("add_track_button");
 
-var parent = document.getElementById('add_tracks');
+button.addEventListener("click", function() {
+  var parent = document.getElementById("add_tracks");
+  var div_name = document.createElement("div");
+  var div_duration = document.createElement("div");
   var input_name = document.createElement("input");
   var input_duration = document.createElement("input");
-  parent.appendChild(input_name);
-  parent.appendChild(input_duration);
+
+  parent.appendChild(div_name);
+  parent.appendChild(div_duration);
+
+  div_name.appendChild(input_name);
+  div_duration.appendChild(input_duration);
+
   var input = document.getElementsByTagName("input");
+  var div = document.getElementsByTagName("div");
+  console.log("deu");
   for(var i=10;i<input.length-1;i++) {
     if(i%2==0){
+      div[i].className = "add-tracks-track[]";
       input[i].setAttribute("name", "track_name[]");
       input[i].setAttribute("type", "text");
       input[i].setAttribute("class", "track_name");
+      input[i].setAttribute("placeholder", "Name");
     }
 
     if(i%2!=0){
+      div[i].className = "add-tracks-duration[]";
       input[i].setAttribute("name", "track_duration[]");
       input[i].setAttribute("type", "number");
       input[i].setAttribute("class", "track_duration");
+      input[i].setAttribute("placeholder", "Duration");
     }
   }
+});

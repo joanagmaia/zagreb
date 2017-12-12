@@ -50,14 +50,17 @@
               <li class="listed_album_price"><span>Price: </span><?php echo $price[$i] ?></li>
             </ul>
           </div>
-          <input type="checkbox" name="operation_checkbox" class="operation_checkbox">
+          <input class="operation_checkbox" type="checkbox">
         </div>
       </a>
       <?php } ?>
+      <form method="GET" action="../php/list_albums.php" name="form_remove" id="remove-form">
+        <input id="remove-album" type="submit" name="submit_remove" value="remove">
+        <input id="inactive-button" type="submit" name="submit_inactive" value="inactive">
+      </form>
       </div>
-      <button type =""class="remove-album">Remove Album</button>
     </main>
-    <?php echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../script/info_url.js"></script>'; ?>
     <script src="../script/remove_album.js"></script>
   </body>
