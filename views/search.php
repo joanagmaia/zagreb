@@ -33,10 +33,12 @@
       <div class="search_bar">
         <input type="search" name="search bar" placeholder="search the album name">
       </div>
+      <a href="#" id="fds">
       <div id="list_albums">
         <?php
         for($i=0;$i<count($name);$i++){
         ?>
+
         <div class="listed_album">
           <div>
             <p class="listed_album_name">
@@ -50,6 +52,7 @@
           </div>
           <input class="operation_checkbox" type="checkbox">
         </div>
+      </a>
       <?php } ?>
       <form method="GET" action="../php/list_albums.php" name="form_remove" id="remove-form">
         <input id="remove-album" type="submit" name="submit_remove" value="remove">
@@ -58,6 +61,7 @@
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/info_url.js"></script>'; ?>
     <script src="../script/remove_album.js"></script>
   </body>
 </html>
