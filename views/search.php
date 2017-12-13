@@ -31,15 +31,31 @@
     </header>
     <main>
       <div class="search_bar">
-        <input type="search" name="search bar" placeholder="search the album name">
+        <form method="GET" action="../php/list_albums.php" name="form-search">
+          <input type="search" name="search_bar" placeholder="search the album name">
+          <div class="search-type">
+            <div class="search-type-inputs">
+              <div class="filter">
+                <label>Album name</label>
+                <input type="checkbox" name="search_album_name" value="Album name">
+              </div>
+              <div class="filter">
+                <label>Genre</label>
+                <input type="checkbox" name="search_genre" value="Genre">
+              </div>
+            </div>
+            <input type="submit" name="submit_search" value="Go">
+          </form>
+          <form method="GET" action="../php/list_albums.php" name="form-search-all">
+            <input type="submit" name="submit_show_all" value="Show all">
+          </form>
+        </div>
       </div>
       <?php
       for($i=0;$i<count($name);$i++){
       ?>
       <a href="#" id="fds">
       <div id="list_albums">
-
-
         <div class="listed_album">
           <div>
             <p class="listed_album_name">
@@ -62,7 +78,7 @@
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../script/info_url.js"></script>'; ?>
+    <script src="../script/info_url.js"></script>
     <script src="../script/remove_album.js"></script>
   </body>
 </html>

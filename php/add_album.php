@@ -65,8 +65,6 @@
     }
   }
 
-
-
   if ($conn->query($insert) === TRUE) {
   } else {
     echo "Error: " . $insert . "<br>" . $conn->error;
