@@ -10,6 +10,7 @@
   </head>
   <body>
     <?php include '../php/verify_login.php'; ?>
+    <?php include '../php/statistics.php'; ?>
     <header>
       <nav class="navbar">
         <p id="logo">ZAGREB</p>
@@ -46,15 +47,35 @@
       <div class="right_column">
         <div class="number_clients">
           <p class="subtitle">Number of clients</p>
-          <p class="number">31</p>
+          <p class="number"><?php echo $nrowusers; ?></p>
         </div>
-        <div class="number_sales">
-          <p class="subtitle">Number of sales</p>
-          <p class="number">14</p>
+        <div class="number_stock">
+          <p class="subtitle">Number of albums in stock</p>
+          <p class="number"><?php echo $nrowstock; ?></p>
         </div>
         <div class="number_albums">
           <p class="subtitle">Number of albums</p>
-          <p class="number">20</p>
+          <p class="number"><?php echo $nrowalbums; ?></p>
+        </div>
+        <div class="number_rock">
+          <p class="subtitle">Number of albums rock</p>
+          <p class="number"><?php echo $nrowalbumsrock; ?></p>
+        </div>
+        <div class="number_folk">
+          <p class="subtitle">Number of albums folk</p>
+          <p class="number"><?php echo $nrowalbumsfolk; ?></p>
+        </div>
+        <div class="number_pop">
+          <p class="subtitle">Number of albums pop</p>
+          <p class="number"><?php echo $nrowalbumspop; ?></p>
+        </div>
+        <div class="number_metal">
+          <p class="subtitle">Number of albums metal</p>
+          <p class="number"><?php echo $nrowalbumsmetal; ?></p>
+        </div>
+        <div class="number_jazz">
+          <p class="subtitle">Number of albums jazz</p>
+          <p class="number"><?php echo $nrowalbumsjazz; ?></p>
         </div>
       </div>
     </main>
