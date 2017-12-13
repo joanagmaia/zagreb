@@ -1,25 +1,54 @@
-.search_bar {
-  display: flex;
-  flex:1;
-  margin: 80px 100px;
-  box-shadow: 4px 4px 4px rgba(156,156,156,0.5);
-}
-
-.search_bar input[type="search"] {
-  width: 100%;
-  border: none;
-  height: 80px;
-  padding: 0px 32px 0px 32px;
-  font-size: 24px;
-  background-color: white;
-}
-
-.search_bar input::placeholder {
-  color: #454851;
-}
-
 body {
   background-color: #E1E1DD;
+}
+
+.search_bar {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_bar input {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+}
+.search-type {
+  width: 100%;
+}
+
+.filter {
+  width: 15%;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: #CDC3BB;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.filter input {
+  width: auto;
+}
+
+ .search_bar form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.search_bar form input[type="search"] {
+  width: 100%;
+}
+
+.search-type-inputs {
+  display: flex;
 }
 
 .listed_album {
@@ -70,5 +99,5 @@ body {
 }
 
 #remove-album, #inactive-album {
-  background-color: 
+  background-color:
 }

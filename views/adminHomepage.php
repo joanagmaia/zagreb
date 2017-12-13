@@ -24,7 +24,7 @@
           <p class="boxes_p">Edit all your albums, change the price, their stock and their description.</p>
           <img class="boxes_img" src="../public/edit.png">
         </a>
-        <a href="#" class="remove_album">
+        <a href="search.php?id=<?php echo $valid_id; ?>" class="remove_album">
           <p class="boxes_p">Out of stock? Deactivate one of your albums.</p>
           <img class="boxes_img" src="../public/remove.png">
         </a>

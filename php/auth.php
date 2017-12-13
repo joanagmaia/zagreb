@@ -143,6 +143,7 @@
       $_SESSION['email']=$email;
       $idd=createId();
       $_SESSION['id']=$idd;
+      $_SESSION['filtered']=1;
       if($type_admin==1)
         header('Location: '.'../views/adminHomepage.php?id='.$idd);
       if($type_admin==0)
