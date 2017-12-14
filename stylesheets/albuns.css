@@ -1,0 +1,41 @@
+#list_albums_page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  justify-content: center
+}
+
+.listed_album_page {
+  width: 25rem;
+  height: 25rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in 0.5s;
+}
+
+.listed_album_page:hover {
+  width: 30rem;
+  height: 30rem;
+  cursor: pointer;
+}
+
+.listed_album_page_info {
+  list-style-type: none;
+  text-align: center;
+  transition: ease-in 0.5s;
+}
+
+.more-info-wrapper {
+  width: 20rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.more-info-wrapper li {
+  margin-bottom: 0.5rem;
+}

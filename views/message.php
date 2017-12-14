@@ -11,6 +11,7 @@
   </head>
   <body>
     <?php include '../php/verify_login.php'; ?>
+    <?php include '../php/send_message.php'; ?>
       <header>
         <?php include '../php/menu.php';?>
       </header>
@@ -24,7 +25,7 @@
           <label>Title</label>
           <input type="text" name="title_message" id="title">
           <label>Message</label>
-          <textarea name="message_content">Insert your message here.</textarea>
+          <textarea name="message_content" placeholder="Insert your message here."></textarea>
           <input type="submit" value="Submit" name="message_submit" class="light-blue-bg">
         </div>
     </main>

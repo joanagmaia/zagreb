@@ -12,6 +12,8 @@ $nrowalbumsfolk=0;
 $nrowalbumsmetal=0;
 $nrowalbumsjazz=0;
 
+$nrowtracks=0;
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -58,6 +60,15 @@ if ($conn->connect_error) {
       if($row['genre']=="jazz"){
         $nrowalbumsjazz+=1;
       }
+    }
+  }
+
+  $number_tracks = "SELECT * from faixa";
+  $result3 = $conn->query($number_tracks);
+
+  if($result3->num_rows > 0) {
+    while($row = $result3->fetch_assoc()) {
+      $nrowtracks+=1;
     }
   }
 ?>

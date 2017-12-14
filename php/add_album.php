@@ -64,6 +64,8 @@
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
+  echo $sum;
+  echo $row;
 
   if ($conn->query($insert) === TRUE) {
   } else {

@@ -95,6 +95,8 @@ CREATE TABLE carrinho(
     data_transition DATE,
     price FLOAT,
     quantidade INT,
+		album_id INT,
+		client_id INT,
 	PRIMARY KEY(id)
 );
 

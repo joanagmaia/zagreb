@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/basic.css">
     <link rel="stylesheet" href="../stylesheets/header.css">
+    <link rel="stylesheet" href="../stylesheets/colors.css">
     <link rel="stylesheet" href="../stylesheets/list_albums.css">
   </head>
   <body>
@@ -16,7 +17,7 @@
     </header>
     <main>
       <div class="search_bar">
-        <form method="GET" action="../php/list_albums.php" name="form-search">
+        <form method="GET" id="filter-form" action="../php/list_albums.php" name="form-search">
           <input type="search" name="search_bar" placeholder="search the album name">
           <div class="search-type">
             <div class="search-type-inputs">
@@ -29,13 +30,13 @@
                 <input type="checkbox" name="search_genre" value="Genre">
               </div>
             </div>
-            <input type="submit" name="submit_search" value="Go">
-          </form>
-          <form method="GET" action="../php/list_albums.php" name="form-search-all">
-            <input type="submit" name="submit_show_all" value="Show all">
-          </form>
+            <input id="submit-search" type="submit" name="submit_search" value="Go">
         </div>
+      </form>
       </div>
+      <form method="GET" id="show-all" action="../php/list_albums.php" name="form-search-all">
+        <input type="submit" name="submit_show_all" value="Show all">
+      </form>
       <?php
       for($i=0;$i<count($name);$i++){
       ?>
@@ -57,8 +58,8 @@
       </a>
       <?php } ?>
       <form method="GET" action="../php/list_albums.php" name="form_remove" id="remove-form">
-        <input id="remove-album" type="submit" name="submit_remove" value="remove">
-        <input id="inactive-button" type="submit" name="submit_inactive" value="inactive">
+        <input id="remove-album" class="red-bg" type="submit" name="submit_remove" value="remove">
+        <input id="inactive-button" class="light-blue-bg" type="submit" name="submit_inactive" value="inactive">
       </form>
       </div>
     </main>
