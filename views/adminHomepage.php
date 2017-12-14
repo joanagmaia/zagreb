@@ -16,7 +16,7 @@
     </header>
     <main>
       <div class="left_column">
-        <a href="add_album.php?id=<?php echo $valid_id; ?>" class="add_album">
+        <a href="add_album.php?id=<?php echo $_SESSION['id']; ?>" class="add_album">
           <p class="boxes_p">Add albums and all their tracks. Choose the best picture you have of it.</p>
           <img class="boxes_img" src="../public/add.png">
         </a>
@@ -24,7 +24,7 @@
           <p class="boxes_p">Edit all your albums, change the price, their stock and their description.</p>
           <img class="boxes_img" src="../public/edit.png">
         </a>
-        <a href="search.php?id=<?php echo $valid_id; ?>" class="remove_album">
+        <a href="search.php?id=<?php echo $_SESSION['id']; ?>" class="remove_album">
           <p class="boxes_p">Out of stock? Deactivate one of your albums.</p>
           <img class="boxes_img" src="../public/remove.png">
         </a>

@@ -29,6 +29,10 @@ if (!isset($_POST["shopping_cart"])) {
   $artist = "";
   $genre = "";
   $year = "";
+  $price = "";
+  $stock = "";
+  $tracks_name=array();
+  $tracks_duration=array();
 
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -39,6 +43,7 @@ if (!isset($_POST["shopping_cart"])) {
           $genre=$row['genre'];
           $year=$row['year'];
           $price=$row['price'];
+          $stock=$row['stock'];
         }
       }
     }
@@ -50,6 +55,19 @@ if (!isset($_POST["shopping_cart"])) {
   $_SESSION['genre']=$genre;
   $_SESSION['year']=$year;
   $_SESSION['price']=$price;
+
+  $tracks_list = "SELECT * FROM faixa";
+  $result2 = $conn->query($tracks_list);
+
+  if ($result2->num_rows > 0) {
+    while($row = $result2->fetch_assoc()) {
+      if($row['albumID']==$album_id) {
+
+      $tracks_name[]=$row['name'];
+      $tracks_duration[]=$row['duration'];
+    }
+    }
+  }
 
 }
 
