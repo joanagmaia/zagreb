@@ -32,11 +32,21 @@
             <p id="genre"><?php echo $genre; ?></p>
             <h3>Year</h3>
             <p id="year"><?php echo $year; ?></p>
+            <h3>Price</h3>
+            <p id="year"><?php echo $price; ?></p>
+            <h3>Stock</h3>
+            <p id="year"><?php echo $stock; ?></p>
           </div>
           <div class="tracklist">
             <h3>Tracklist</h3>
+            <?php
+            for($i=0;$i<count($tracks_name);$i++){
+            ?>
             <div class="track dark-brown-bg">
+              <p><?php echo $tracks_name[$i]; ?></p>
+              <p></p>
             </div>
+          <?php } ?>
           </div>
         </div>
 
