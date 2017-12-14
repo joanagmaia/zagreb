@@ -55,7 +55,7 @@
       $valid_id = $_SESSION['id'];
       ?>
       <form action="../php/album_info.php?id=<?php echo $valid_id; ?>" method="post">
-          <input type="submit" name="shopping_cart" value="add to shopping cart">
+          <input type="submit" class="add-to-cart-button"name="shopping_cart" value="add to shopping cart">
       </form>
     </main>
   </body>
