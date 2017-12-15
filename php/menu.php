@@ -13,7 +13,7 @@
       <a href="adminHomepage.php?id=<?php echo $_SESSION['id']; ?>"><p id="logo"><?php echo $_SESSION['user']?></p></a>
       <a href="search.php?id=<?php echo $_SESSION['id']; ?>"><li class="menu_titles">Search</li></a>
       <a href="albums.php?id=<?php echo $_SESSION['id']; ?>"><li class="menu_titles">Albums</li></a>
-      <a href="#"><li class="menu_titles">Stats</li></a>
+      <a href="stats.php?id=<?php echo $_SESSION['id']; ?>"><li class="menu_titles">Stats</li></a>
       <a href="message.php?id=<?php echo $_SESSION['id']; ?>"><li class="menu_titles">Message</li></a>
       <a href="authentication.php"> <li id="logout" class="menu_titles">Logout</li> </a>
     <?php } if($_SESSION['type_admin']==0) { ?>

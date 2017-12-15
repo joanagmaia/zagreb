@@ -141,6 +141,7 @@
 
       $_SESSION['loggedin']=true;
       $_SESSION['email']=$email;
+      $_SESSION['password']=$password;
       $idd=createId();
       $_SESSION['id']=$idd;
       $_SESSION['filtered']=1;
