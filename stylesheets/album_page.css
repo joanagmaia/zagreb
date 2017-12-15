@@ -2,11 +2,25 @@
   display: flex;
   min-height: 50vh;
   margin-left: 2rem;
+
 }
 
 .album-image {
-  min-width: 45%;
+  width: 40rem;
+  height: 40rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  opacity: 0.8;
 }
+
+.added_image {
+  display: block;
+  width: 100%;
+}
+
+
 
 .album-info {
   margin-left: 2rem;

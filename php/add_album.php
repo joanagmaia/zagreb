@@ -24,15 +24,17 @@
   $price = $_GET["price"];
   $name_track = $_GET["track_name"];
   $name_duration = $_GET["track_duration"];
+  $url = $_GET["url"];
+
 
   $sql_album = "SELECT * FROM album";
   $result = $conn->query($sql_album);
-
+ echo $url;
   if(!isset($name) || trim($name) == ''
   || !isset($artist) || trim($artist) == '' || !isset($year)
   || trim($year) == '' || !isset($genre) || trim($genre) == ''
   || !isset($ranking) || trim($ranking) == '' || !isset($available) || trim($available) == ''
-  || !isset($stock) || trim($stock) == '' || !isset($price) || trim($price) == ''){
+  || !isset($stock) || trim($stock) == '' || !isset($price) || trim($price) == '' || trim($url) == '' ){
     echo '
     <script language="javascript">
     alert("You did not fill out the required fields.");
@@ -40,6 +42,7 @@
   }
 
   if(isset($_GET['add_album'])) {
+      $url = $_GET["url"];
     session_start();
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -62,12 +65,12 @@
 
   if($sum == $nrow) {
     if($available=='on') {
-      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
-      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
+      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price,url)
+      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price','$url')";
     }
     else {
-      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
-      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
+      $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price,url)
+      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price','$url')";
     }
   }
   echo $sum;

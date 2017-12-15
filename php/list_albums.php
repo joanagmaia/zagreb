@@ -18,6 +18,7 @@
   $var;
   $sql;
   $result;
+  $url;
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -92,6 +93,7 @@
       $stock[]=$row['stock'];
       $price[]=$row['price'];
       $id[]=$row['id'];
+      $url[]=$row['url'];
     }
   }
 

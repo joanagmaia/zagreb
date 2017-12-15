@@ -33,6 +33,7 @@ if (!isset($_POST["shopping_cart"])) {
   $stock = "";
   $tracks_name=array();
   $tracks_duration=array();
+  $url = "";
 
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -44,6 +45,7 @@ if (!isset($_POST["shopping_cart"])) {
           $year=$row['year'];
           $price=$row['price'];
           $stock=$row['stock'];
+          $url=$row['url'];
         }
       }
     }
