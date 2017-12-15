@@ -61,7 +61,7 @@
       if($terminado[$i]==0){
       ?>
     <form action="../php/payment.php?id=<?php echo $_SESSION['id']; ?>" method="post">
-        <input type="submit" name="payment" id="payment_button" value="PAYMENT BITCHES">
+        <input type="submit" name="payment" id="payment_button" value="PAYMENT">
     </form>
   <?php }} ?>
   </main>

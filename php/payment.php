@@ -70,7 +70,7 @@ if($novo_saldo>=0) {
   </script>";
 }
 
-
+header('Location: '.'../views/shopping_cart.php?id='.$_SESSION['id']);
 
 
 
