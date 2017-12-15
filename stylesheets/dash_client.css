@@ -1,4 +1,42 @@
-.recent-albuns, .recommended, .contact-us {
+.recent-albuns, .recommended {
   min-height: 50vh;
   padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.all_albuns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin-top: 2rem;
+}
+
+.purchased_albums, .cart_albums {
+  width: 20rem;
+height: 10rem;
+margin: 1rem;
+padding: 1rem;
+border-radius: 0.2rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #CDC3BB;
+}
+
+.cart_albums {
+  background-color:#ECEAE3;
+}
+.recommended h2 {
+  margin-bottom: 2rem;
+}
+
+.recent-albuns h3, .recommended h3 {
+  color: #C96459
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
 }

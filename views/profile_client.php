@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <title>Message</title>
+    <title>Profile</title>
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/basic.css">
     <link rel="stylesheet" href="../stylesheets/colors.css">
