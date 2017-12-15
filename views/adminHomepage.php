@@ -20,7 +20,7 @@
           <p class="boxes_p">Add albums and all their tracks. Choose the best picture you have of it.</p>
           <img class="boxes_img" src="../public/add.png">
         </a>
-        <a href="#" class="edit_album">
+        <a href="albums.php?id=<?php echo $_SESSION['id']; ?>" class="edit_album">
           <p class="boxes_p">Edit all your albums, change the price, their stock and their description.</p>
           <img class="boxes_img" src="../public/edit.png">
         </a>

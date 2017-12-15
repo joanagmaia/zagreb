@@ -5,6 +5,7 @@
   $dbname = "zagreb_database";
   $sum = 0;
   $nrow = 0;
+  $last_id=0;
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
   // Check connection
@@ -55,16 +56,18 @@
           $sum+=1;
         }
       }
+      $last_id = $row['id']+1;
+
     }
 
   if($sum == $nrow) {
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
-      VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
+      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
     }
     else {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
-      VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
+      VALUES ($last_id, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
   echo $sum;
@@ -79,7 +82,7 @@
     echo $i;
 
     $sql = "INSERT INTO faixa (name,duration,albumID,faixaID)
-    VALUES ('$name_track[$i]','$name_duration[$i]',$nrow, $i)";
+    VALUES ('$name_track[$i]','$name_duration[$i]',$last_id, $i)";
 
     if ($conn->query($sql) === TRUE) {
       echo "New faixa created successfully";
