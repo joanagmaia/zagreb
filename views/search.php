@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <title>Homepage</title>
+    <title>Search</title>
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/basic.css">
     <link rel="stylesheet" href="../stylesheets/header.css">
@@ -38,12 +38,13 @@
       <form method="GET" id="show-all" action="../php/list_albums.php" name="form-search-all">
         <input type="submit" name="submit_show_all" value="Show all">
       </form>
+      <div id="list_albums">
       <?php
       for($i=0;$i<count($name);$i++){
         $_SESSION['delete_name'][$i]=$name[$i];
       ?>
       <a href="album_page.php?id=<?php echo $_SESSION['id'];?>&album_name=<?php echo $name[$i];?>">
-      <div id="list_albums">
+
         <div class="listed_album">
           <div>
             <p class="listed_album_name">
@@ -59,11 +60,12 @@
         </div>
       </a>
       <?php } ?>
+      </div>
       <form method="GET" action="../php/list_albums.php" name="form_remove" id="remove-form">
         <input id="remove-album" class="red-bg" type="submit" name="submit_remove" value="remove">
         <input id="inactive-button" class="light-blue-bg" type="submit" name="submit_inactive" value="inactive">
       </form>
-      </div>
+
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../script/remove_album.js"></script>
