@@ -38,24 +38,7 @@
           <span>From: <?php echo $admin[$i] ?></span>
         <?php } ?>
         </div>
-      <div class="your-albuns pale-brown-bg">
-        <h2>Your albuns</h2>
-        <div class="albuns-wrapper">
-          <div class="albuns"></div>
-          <form action="GET" action="" name="album-name">
-          <div class="filter">
-            <h3>Order by</h3>
-            <ul>
-              <li><input type="checkbox" name="genre_input">Genre</li>
-              <li><input type="checkbox" name="genre_input">Artist</li>
-              <li><input type="checkbox" name="genre_input">Year</li>
-            </ul>
-              <input type="text" name="name" value="search">
-              <input type="submit" class="dark-brown-bg" name="submit-album-name" value="go">
-            </form>
-          </div>
-        </div>
-      </div>
+      
     </main>
   </body>
 </html>

@@ -30,32 +30,27 @@
       if($terminado[$i]==0){
       ?>
       <div class="item-wrapper pale-brown-bg">
-        <h3>nameeeee:<?php echo $cart_album_name[$i] ?></h3>
+        <h3><?php echo $cart_album_name[$i] ?></h3>
         <?php $_SESSION['cart_name'][]=$cart_album_name[$i] ?>
-        <h3>id:<?php echo $cart_id[$i] ?></h3>
         <div class="album-general-info">
           <div class="image-info">
-            <span>artisttt:<?php echo $cart_artist[$i] ?></span>
-            <span>yearrrr:<?php echo $cart_year[$i] ?></span>
-            <span>genreeee:<?php echo $cart_genre[$i] ?></span>
-            <span>priceeeee:<?php echo $cart_price[$i] ?></span>
-          </div>
-          <div class="track">
+            <span>artist:<?php echo $cart_artist[$i] ?></span>
+            <span>year:<?php echo $cart_year[$i] ?></span>
+            <span>genre:<?php echo $cart_genre[$i] ?></span>
+            <span>price:<?php echo $cart_price[$i] ?></span>
           </div>
         </div>
         <div class="payment-album">
           <div class="quantity">
-            <h3>quantityyyy:</h3>
-            <span><?php echo $cart_quantity[$i] ?></span>
+            <h3>quantity:</h3>
+            <h3><?php echo $cart_quantity[$i] ?></h3>
             <?php $_SESSION['quantidade'][]=$cart_quantity[$i] ?>
-            <span>-</span>
-            <span>+</span>
           </div>
           <div class="total">
-            <h3>Total</h3>
+            <h4>Total:</h4>
             <?php $_SESSION['total_price'][]=$cart_quantity[$i]*$cart_price[$i];
             $_SESSION['cart_id'][]=$cart_id[$i];?>
-            <span name="total_price"><?php echo $cart_quantity[$i]*$cart_price[$i]; ?></span>
+            <h4 name="total_price"><?php echo $cart_quantity[$i]*$cart_price[$i]; ?></h4>
           </div>
         </div>
       </div>

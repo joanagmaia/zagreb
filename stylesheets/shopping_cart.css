@@ -6,4 +6,28 @@
 
 .item-wrapper {
   margin-bottom: 32px;
+  padding: 2rem;
+}
+
+.quantity, .total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.total {
+  display: flex;
+  width: 80px;
+  padding: 8px;
+  color: white;
+  background-color: #CDC3BB;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 8px;
 }

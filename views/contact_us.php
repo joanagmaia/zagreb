@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../stylesheets/basic.css">
     <link rel="stylesheet" href="../stylesheets/colors.css">
     <link rel="stylesheet" href="../stylesheets/header.css">
+    <link rel="stylesheet" href="../stylesheets/contact_us.css">
   </head>
   <body>
     <?php include '../php/verify_login.php';?>
@@ -22,7 +23,7 @@
       <form method="GET" action="../php/send_email.php" name="form_contact_us">
         <input type="text" name="subject_message" placeholder="Topic">
         <input type="text" name="content_message" placeholder="Your message">
-        <input type="submit" name="submit_message" placeholder="Send">
+        <input id="submit" type="submit" name="submit_message" placeholder="Send">
       </form>
     </main>
   </body>
