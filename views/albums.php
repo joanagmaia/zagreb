@@ -13,7 +13,6 @@
     <?php include '../php/verify_login.php';?>
     <?php include '../php/list_albums.php'; ?>
     <?php $_SESSION['filtered']=1; ?>
-    <?php echo $_SESSION['filtered']; ?>
     <header>
       <?php include '../php/menu.php';?>
     </header>

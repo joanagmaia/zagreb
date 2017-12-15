@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../stylesheets/list_albums.css">
   </head>
   <body>
-    <?php include '../php/verify_login.php';?>
+    <?php include '../php/verify_login.php';
+    $_SESSION['delete_name']=array();?>
     <?php include '../php/list_albums.php';?>
     <header>
      <?php include '../php/menu.php';?>
@@ -39,8 +40,9 @@
       </form>
       <?php
       for($i=0;$i<count($name);$i++){
+        $_SESSION['delete_name'][$i]=$name[$i];
       ?>
-      <a href="#" id="fds">
+      <a href="album_page.php?id=<?php echo $_SESSION['id']; ?>">
       <div id="list_albums">
         <div class="listed_album">
           <div>

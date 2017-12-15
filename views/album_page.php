@@ -19,6 +19,7 @@
       <h3><?php echo $album_name; ?></h3>
     </div>
     <main>
+      <?php $_SESSION['album_name_selected']=$_GET['album_name']; ?>
       <div class="album-wrapper">
         <div class="album-image pale-brown-bg">
           <div class="add-to-cart">
@@ -44,7 +45,7 @@
             ?>
             <div class="track dark-brown-bg">
               <p><?php echo $tracks_name[$i]; ?></p>
-              <p></p>
+              <p><?php echo $tracks_duration[$i]; ?> minutes</p>
             </div>
           <?php } ?>
           </div>
@@ -55,8 +56,11 @@
       $valid_id = $_SESSION['id'];
       ?>
       <form action="../php/album_info.php?id=<?php echo $valid_id; ?>" method="post">
-          <input type="submit" class="add-to-cart-button"name="shopping_cart" value="add to shopping cart">
+          <input type="submit" class="light-blue-bg" name="shopping_cart" value="Add cart">
       </form>
+      <?php include '../php/edit_album_form.php' ?>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/edit_wrapper.js"></script>
   </body>
 </html>

@@ -12,11 +12,12 @@
   $id = array();
   $id_faixa = array();
   $values = array();
+  $id_selected = array();
   $nrow = 0;
+  $new_nrow = 0;
   $var;
   $sql;
   $result;
-
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -26,22 +27,33 @@
   }
 
   if(isset($_GET["submit_remove"])) {
+    session_start();
     $remove_input = $_GET["remove-input"];
     for($i=0;$i<count($remove_input);$i++) {
-      $id_database = $id[$i];
-      $remove_sql = "DELETE FROM album WHERE id=$id_database";
-      if ($conn->query($remove_sql) === TRUE) {
-        echo "album deleted";
-      } else {
-        echo "Error: " . $remove_sql . "<br>" . $conn->error;
+      $id_database = $remove_input[$i];
+          $session_name = $_SESSION['delete_name'][$id_database];
+          $get_album_id = "SELECT id FROM album WHERE name='$session_name';";
+          $get_album_result=$conn->query($get_album_id);
+          while($row=$get_album_result->fetch_assoc()){
+            $id_selected = $row['id'];
+          }
+          $remove_sql = "DELETE FROM album WHERE id='$id_selected'";
+          if ($conn->query($remove_sql) === TRUE) {
+          } else {
+            echo "Error: " . $remove_sql . "<br>" . $conn->error;
+          }
+        }
       }
-    }
-  }
+
+
+
+
 
   if(isset($_GET["submit_inactive"])) {
+    session_start();
     $remove_input = $_GET["remove-input"];
     for($i=0;$i<count($remove_input);$i++) {
-      $id_database = $id[$i];
+      $id_database = $remove_input[$i];
       $inactive = "UPDATE album SET available=0 WHERE id=$id_database";
       if ($conn->query($inactive) === TRUE) {
         echo "album inactive";
@@ -49,6 +61,8 @@
         echo "Error: " . $inactive . "<br>" . $conn->error;
       }
     }
+    echo $id_database;
+
   }
   //echo $_SESSION['filtered'];
   if($_SESSION['filtered']===1) {
@@ -67,20 +81,6 @@
     $sql = "SELECT * FROM album WHERE genre LIKE '%$input%'";
     $result = $conn->query($sql);
   }
-
-  /*if($_SESSION['filtered']===4) {
-    $input = $_SESSION['input'];
-    $sql_faixa = "SELECT * FROM faixa WHERE name='$input'";
-    $result_faixa = $conn->query($sql_faixa);
-    if ($result_faixa->num_rows > 0) {
-      $_SESSION['album_ID']=$row['albumID'];
-    }
-    for($i=0;$i<count($_SESSION['album_ID']);$i++) {
-      $album_id_selected = $_SESSION['album_ID'][$i];
-      $sql = "SELECT * FROM album WHERE albumID='$album_id_selected'";
-      $result = $conn->query($sql);
-    }
-  }*/
 
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
