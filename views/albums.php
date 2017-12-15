@@ -18,6 +18,7 @@
         <?php
         for($i=0;$i<count($name);$i++){
           ?>
+          <a href="album_page.php?id=<?php echo $_SESSION['id'];?>&album_name=<?php echo $name[$i];?>">
         <div class="listed_album_page">
           <p class="listed_album_page_name">Album name: <?php echo $name[$i] ?></p>
           <ul class="listed_album_page_info">
@@ -27,6 +28,7 @@
             <li class="listed_album-page_price"><span>Price: </span><?php echo $price[$i] ?> </li>
           </ul>
         </div>
+      </a>
       <?php } ?>
       </div>
     </main>

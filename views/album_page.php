@@ -32,6 +32,10 @@
             <p id="genre"><?php echo $genre; ?></p>
             <h3>Year</h3>
             <p id="year"><?php echo $year; ?></p>
+            <h3>Price</h3>
+            <p id="year"><?php echo $price; ?></p>
+            <h3>Stock</h3>
+            <p id="year"><?php echo $stock; ?></p>
           </div>
           <div class="tracklist">
             <h3>Tracklist</h3>

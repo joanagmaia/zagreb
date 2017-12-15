@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="../stylesheets/shopping_cart.css">
 </head>
 <body>
-  <?php include '../php/verify_login.php'; ?>
+  <?php include '../php/verify_login.php';
+  $_SESSION['total_price']=array();
+  $_SESSION['cart_id']=array();?>
   <?php include '../php/shopping_cart_info.php'; ?>
   <header>
     <?php include '../php/menu.php';?>
@@ -23,10 +25,11 @@
     <?php $total=""; ?>
     <?php
     for($i=0;$i<count($cart_album_id);$i++){
+      if($terminado[$i]==0){
       ?>
       <div class="item-wrapper pale-brown-bg">
         <h3>nameeeee:<?php echo $cart_album_name[$i] ?></h3>
-        <h3>id:<?php echo $cart_album_id[$i] ?></h3>
+        <h3>id:<?php echo $cart_id[$i] ?></h3>
         <div class="album-general-info">
           <div class="image-info">
             <span>artisttt:<?php echo $cart_artist[$i] ?></span>
@@ -46,17 +49,22 @@
           </div>
           <div class="total">
             <h3>Total</h3>
-            <?php $_SESSION['total_price']=$cart_quantity[$i]*$cart_price[$i];?>
-            <span name="total_price"><?php echo $_SESSION['total_price']; ?></span>
+            <?php $_SESSION['total_price'][$i]=$cart_quantity[$i]*$cart_price[$i];
+            $_SESSION['cart_id'][$i]=$cart_id;?>
+            <span name="total_price"><?php echo $_SESSION['total_price'][$i]; ?></span>
           </div>
         </div>
       </div>
 
-    <?php } ?>
-
+    <?php }} ?>
+    <?php
+    for($i=0;$i<count($cart_album_id);$i++){
+      if($terminado[$i]==0){
+      ?>
     <form action="../php/payment.php?id=<?php echo $_SESSION['id']; ?>" method="post">
         <input type="submit" name="payment" id="payment_button" value="PAYMENT BITCHES">
     </form>
+  <?php }} ?>
   </main>
 </body>
 </html>

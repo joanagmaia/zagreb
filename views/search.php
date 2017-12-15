@@ -39,7 +39,7 @@
       <?php
       for($i=0;$i<count($name);$i++){
       ?>
-      <a href="#" id="fds">
+      <a href="album_page.php?id=<?php echo $_SESSION['id'];?>&album_name=<?php echo $name[$i];?>">
       <div id="list_albums">
         <div class="listed_album">
           <div>
@@ -63,7 +63,6 @@
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../script/info_url.js"></script>
     <script src="../script/remove_album.js"></script>
   </body>
   </html>
