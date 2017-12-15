@@ -64,9 +64,9 @@ if (!isset($_POST["shopping_cart"])) {
     while($row = $result2->fetch_assoc()) {
       if($row['albumID']==$album_id) {
 
-      $tracks_name[]=$row['name'];
-      $tracks_duration[]=$row['duration'];
-    }
+        $tracks_name[]=$row['name'];
+        $tracks_duration[]=$row['duration'];
+      }
     }
   }
 
@@ -77,9 +77,9 @@ if (!isset($_POST["shopping_cart"])) {
     while($row = $result2->fetch_assoc()) {
       if($row['albumID']==$album_id) {
 
-      $tracks_name[]=$row['name'];
-      $tracks_duration[]=$row['duration'];
-    }
+        $tracks_name[]=$row['name'];
+        $tracks_duration[]=$row['duration'];
+      }
     }
   }
 
@@ -101,29 +101,32 @@ if (isset($_POST["shopping_cart"])) {
   $client_id=$_SESSION['cliente_id'];
   $cliente_saldo=$_SESSION['cliente_saldo'];
   $stock=$_SESSION['stock'];
+  $_SESSION['stock']-=1;
+  $stock=$_SESSION['stock'];
 
   $sum = 0;
   if($stock>0) {
-  $verify_cart_rows = "SELECT * FROM carrinho";
-  $result_verify_rows = $conn->query($verify_cart_rows);
 
-  if ($result_verify_rows->num_rows > 0) {
-    // output data of each row
-    while($row = $result_verify_rows->fetch_assoc()) {
-      $sum+=1;
-      $terminado=$row['terminado'];
-      if($album_id==$row['album_id']) {
-        $existe=true;
+    $verify_cart_rows = "SELECT * FROM carrinho";
+    $result_verify_rows = $conn->query($verify_cart_rows);
 
+    if ($result_verify_rows->num_rows > 0) {
+      // output data of each row
+      while($row = $result_verify_rows->fetch_assoc()) {
+        $sum+=1;
+        $terminado=$row['terminado'];
+        if($album_id==$row['album_id']) {
+          $existe=true;
+
+        }
       }
     }
-  }
 
-  echo "album_id".$album_id;
-
+    echo "album_id".$album_id;
 
 
-  $user = $_SESSION['user'];
+
+    $user = $_SESSION['user'];
     if(!$existe){
       echo "nao existe";
       $insert = "INSERT INTO carrinho (id, data_transition,price,quantidade,album_id,client_id,terminado)
@@ -159,8 +162,8 @@ if (isset($_POST["shopping_cart"])) {
         echo "Error: " . $insert . "<br>" . $conn->error;
       }
     }
-}
-header('Location: '.'../views/album_page.php?id='.$_SESSION['id'].'&album_name='.$_SESSION['album_name']);
+  }
+  header('Location: '.'../views/album_page.php?id='.$_SESSION['id'].'&album_name='.$_SESSION['album_name']);
 
 }
 
