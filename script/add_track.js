@@ -1,5 +1,5 @@
 var button = document.getElementById("add_track_button");
-
+var upload=false;
 button.addEventListener("click", function() {
   var parent = document.getElementById("add_tracks");
   var div_name = document.createElement("div");
@@ -33,4 +33,15 @@ button.addEventListener("click", function() {
       input[i].setAttribute("placeholder", "Duration");
     }
   }
+});
+
+$('.add_image').click(function() {
+  var txt;
+    var url = prompt("Enter url for your image:", "");
+    if (url == null || url == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+      $('.added_image').attr("src",url);
+      $('#url').attr("value",url);
+    }
 });

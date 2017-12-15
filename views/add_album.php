@@ -18,8 +18,12 @@
         <h3>Add album</h3>
         <span>Add your own album for sale.</span>
       </div>
+
       <div class="add-album-wrap pale-brown-bg">
-        <div class="picture-vynil"></div>
+        <div class="album-image pale-brown-bg">
+          <img class="added_image" src="">
+          <button class="add_image">Upload image</button>
+        </div>
         <div class="form-wrapper">
           <form method="GET" action="../php/add_album.php" name="add_album">
             <div class="album-information-wrapper">
@@ -38,6 +42,9 @@
 
               <label>Ranking</label>
               <input type="number" name="ranking">
+
+              <label>URL</label>
+              <input type="text" name="url" value=null id="url">
             </div>
             <div class="business-information-wrapper">
               <h1>Specifics</h1>

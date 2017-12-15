@@ -106,3 +106,29 @@
   cursor: pointer;
   border-bottom: 2px solid white;
 }
+
+
+.album-image {
+  margin-left:2rem;
+  width: 30%;
+  height: 30rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;align-items: center;
+  opacity: 0.8;
+}
+
+.added_image {
+  display: block;
+  width: 100%;
+}
+
+.add_image {
+  position: absolute;
+  padding: 16px;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Effra', sans-serif;
+  font-size: 1.3rem;
+}

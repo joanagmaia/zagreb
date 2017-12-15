@@ -22,8 +22,7 @@
       <?php $_SESSION['album_name_selected']=$_GET['album_name']; ?>
       <div class="album-wrapper">
         <div class="album-image pale-brown-bg">
-          <div class="add-to-cart">
-          </div>
+          <img class="added_image" src="<?php echo $url; ?>">
         </div>
         <div class="album-info">
           <div class="basic-info">
