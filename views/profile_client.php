@@ -13,6 +13,7 @@
   <body>
     <?php include '../php/verify_login.php'; ?>
     <?php include '../php/show_message.php'; ?>
+    <?php echo $_SESSION['email']; ?>
     <header>
       <?php include '../php/menu.php';?>
     </header>
@@ -23,10 +24,10 @@
     <main>
       <div class="basic-info">
         <h2>Basic info</h2>
-        <form method="GET" action="" name="basic_info_form">
-          <input type="text" name="name" value="">
-          <input type="text" name="email" value="">
-          <input type="text" name="password" value="">
+        <form method="GET" action="../php/change_basic.php" name="basic_info_form">
+          <input type="text" name="name_edit"  placeholder="<?php echo $_SESSION['user']; ?>" required>
+          <input type="password" name="password_edit" placeholder="<?php echo $_SESSION['password']; ?>" required>
+          <input type="submit" name="save_general" placeholder="<?php echo $_SESSION['user']; ?>">
         </form>
       </div>
         <div class="new-messages">
