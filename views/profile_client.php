@@ -12,6 +12,7 @@
   </head>
   <body>
     <?php include '../php/verify_login.php'; ?>
+    <?php include '../php/show_message.php'; ?>
     <header>
       <?php include '../php/menu.php';?>
     </header>
@@ -28,24 +29,26 @@
           <input type="text" name="password" value="">
         </form>
       </div>
-      <div class="new-messages">
-        <h2>Latest messages</h2>
-        <div class="message-received">
-          <span>Title</span>
+        <div class="new-messages">
+          <h2>Latest messages</h2>
+          <?php for($i=0;$i<count($title);$i++) { ?>
+          <h3><?php echo $title[$i] ?></h3>
+          <p><?php echo $message[$i] ?></p>
+          <span>From: <?php echo $admin[$i] ?></span>
+        <?php } ?>
         </div>
-      </div>
       <div class="your-albuns pale-brown-bg">
         <h2>Your albuns</h2>
         <div class="albuns-wrapper">
           <div class="albuns"></div>
+          <form action="GET" action="" name="album-name">
           <div class="filter">
             <h3>Order by</h3>
             <ul>
-              <li>Genre</li>
-              <li>Band</li>
-              <li>Year</li>
+              <li><input type="checkbox" name="genre_input">Genre</li>
+              <li><input type="checkbox" name="genre_input">Artist</li>
+              <li><input type="checkbox" name="genre_input">Year</li>
             </ul>
-            <form action="GET" action="" name="album-name">
               <input type="text" name="name" value="search">
               <input type="submit" class="dark-brown-bg" name="submit-album-name" value="go">
             </form>

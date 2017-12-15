@@ -70,6 +70,19 @@ if (!isset($_POST["shopping_cart"])) {
     }
   }
 
+  $tracks_list = "SELECT * FROM faixa";
+  $result2 = $conn->query($tracks_list);
+
+  if ($result2->num_rows > 0) {
+    while($row = $result2->fetch_assoc()) {
+      if($row['albumID']==$album_id) {
+
+      $tracks_name[]=$row['name'];
+      $tracks_duration[]=$row['duration'];
+    }
+    }
+  }
+
 }
 
 

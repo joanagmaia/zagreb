@@ -1,5 +1,3 @@
-
-
 .left_column {
   display: flex;
   flex-direction: column;
@@ -7,7 +5,6 @@
   height: 90%;
   flex:2;
   box-sizing: border-box;
-
 }
 
 .add_album, .edit_album, .remove_album {
@@ -20,7 +17,7 @@
 
 .add_album {
   background-color: #B9CEE0;
-  margin: 48px;
+  margin: 3rem;
 }
 
 .edit_album {
@@ -33,24 +30,23 @@
 }
 
 .right_column {
-    display: flex;
-    flex-direction: column;
-    justify-content: : space-between;
-    flex:1;
-    box-sizing: border-box;
-    margin-top: 32px;
-
-    margin-bottom: 48px;
+    padding: 0.5rem;
+    height: 100%;
+    margin-top: 2rem;
+    margin-right: 2rem;
 }
 
-.number_clients, .number_stock, .number_albums, .number_rock, .number_folk, .number_pop, .number_metal, .number_jazz {
-  flex:1;
-  margin-top: 16px;
-  margin-right: 48px;
+.number {
   background-color: #F4F4F4;
+  font-family: 'Effra', sans-serif;
+  font-size: 2.5rem;
+  color: #CDC3BB;
+  margin: 0.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
 }
 
 main {
@@ -68,18 +64,10 @@ main {
 
 .subtitle {
   font-family: 'Effra', sans-serif;
-  font-size: 30px;
+  font-size: 1.4rem;
   color: black;
-  margin-left: 32px;
-  margin-bottom: 24px;
-}
-
-.number {
-  font-family: 'Effra', sans-serif;
-  font-size: 50px;
-  color: #CDC3BB;
-  margin-right: 32px;
-  margin-bottom: 24px;
+  width: 50%;
+  margin-left: 0.5rem;
 }
 
 .boxes_img {

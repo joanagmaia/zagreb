@@ -62,7 +62,7 @@
               </div>
             </div>
             <p id="add_track_button">Add track</p>
-            <input type="submit" value="add album" id="add">
+            <input type="submit" name="add_album" value="add album" id="add">
           </form>
       </div>
     </div>

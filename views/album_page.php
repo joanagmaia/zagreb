@@ -39,8 +39,14 @@
           </div>
           <div class="tracklist">
             <h3>Tracklist</h3>
+            <?php
+            for($i=0;$i<count($tracks_name);$i++){
+            ?>
             <div class="track dark-brown-bg">
+              <p><?php echo $tracks_name[$i]; ?></p>
+              <p></p>
             </div>
+          <?php } ?>
           </div>
         </div>
 
@@ -49,7 +55,7 @@
       $valid_id = $_SESSION['id'];
       ?>
       <form action="../php/album_info.php?id=<?php echo $valid_id; ?>" method="post">
-          <input type="submit" name="shopping_cart" value="add to shopping cart">
+          <input type="submit" class="add-to-cart-button"name="shopping_cart" value="add to shopping cart">
       </form>
     </main>
   </body>

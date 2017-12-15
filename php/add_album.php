@@ -11,6 +11,7 @@
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   }
+
   echo "Connected successfully". "<br>";
   $name = $_GET["name"];
   $artist = $_GET["artist"];
@@ -34,9 +35,11 @@
     echo '
     <script language="javascript">
     alert("You did not fill out the required fields.");
-    window.location.href="../views/add_album.php";
     </script>';
   }
+
+  if(isset($_GET['add_album'])) {
+    session_start();
     // output data of each row
     while($row = $result->fetch_assoc()) {
       $nrow+=1;
@@ -45,8 +48,8 @@
           echo '
           <script language="javascript">
           alert("Already added this album!");
-          window.location.href="../views/add_album.php";
           </script>';
+
         }
         else {
           $sum+=1;
@@ -54,7 +57,7 @@
       }
     }
 
-  if($sum == $row) {
+  if($sum == $nrow) {
     if($available=='on') {
       $insert = "INSERT INTO album (id,name,artist,year,genre,ranking,available,stock,price)
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', true, '$stock', '$price')";
@@ -64,6 +67,8 @@
       VALUES ($nrow, '$name', '$artist', '$year', '$genre', '$ranking', false, '$stock', '$price')";
     }
   }
+  echo $sum;
+  echo $row;
 
   if ($conn->query($insert) === TRUE) {
   } else {
@@ -82,4 +87,8 @@
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
   }
+  header('Location: '.'../views/add_album.php?id='.$_SESSION['id']);
+
+}
+
 ?>
