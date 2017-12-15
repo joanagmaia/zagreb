@@ -13,7 +13,9 @@
 <body>
   <?php include '../php/verify_login.php';
   $_SESSION['total_price']=array();
-  $_SESSION['cart_id']=array();?>
+  $_SESSION['cart_id']=array();
+  $_SESSION['quantidade']=array();
+  $_SESSION['cart_name']=array();?>
   <?php include '../php/shopping_cart_info.php'; ?>
   <header>
     <?php include '../php/menu.php';?>
@@ -29,6 +31,7 @@
       ?>
       <div class="item-wrapper pale-brown-bg">
         <h3>nameeeee:<?php echo $cart_album_name[$i] ?></h3>
+        <?php $_SESSION['cart_name'][]=$cart_album_name[$i] ?>
         <h3>id:<?php echo $cart_id[$i] ?></h3>
         <div class="album-general-info">
           <div class="image-info">
@@ -44,14 +47,15 @@
           <div class="quantity">
             <h3>quantityyyy:</h3>
             <span><?php echo $cart_quantity[$i] ?></span>
+            <?php $_SESSION['quantidade'][]=$cart_quantity[$i] ?>
             <span>-</span>
             <span>+</span>
           </div>
           <div class="total">
             <h3>Total</h3>
-            <?php $_SESSION['total_price'][$i]=$cart_quantity[$i]*$cart_price[$i];
-            $_SESSION['cart_id'][$i]=$cart_id;?>
-            <span name="total_price"><?php echo $_SESSION['total_price'][$i]; ?></span>
+            <?php $_SESSION['total_price'][]=$cart_quantity[$i]*$cart_price[$i];
+            $_SESSION['cart_id'][]=$cart_id[$i];?>
+            <span name="total_price"><?php echo $cart_quantity[$i]*$cart_price[$i]; ?></span>
           </div>
         </div>
       </div>
