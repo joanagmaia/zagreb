@@ -11,7 +11,9 @@ $cart_genre=array();
 $cart_album_id=array();
 $cart_quantity=array();
 $cart_price=array();
+$terminado=array();
 $nrow=0;
+$cart_id=array();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,9 +29,11 @@ if ($result_carrinho->num_rows > 0) {
   // output data of each row
   while($row = $result_carrinho->fetch_assoc()) {
     if($row['client_id']==$_SESSION['cliente_id']) {
+      array_push($cart_id,$row['id']);
       array_push($cart_album_id,$row['album_id']);
       array_push($cart_quantity,$row['quantidade']);
       array_push($cart_price,$row['price']);
+      array_push($terminado,$row['terminado']);
     }
   }
 }
