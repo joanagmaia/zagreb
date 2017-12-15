@@ -55,6 +55,20 @@ if (!isset($_POST["shopping_cart"])) {
   $_SESSION['genre']=$genre;
   $_SESSION['year']=$year;
   $_SESSION['price']=$price;
+  $_SESSION['stock']=$stock;
+
+  $tracks_list = "SELECT * FROM faixa";
+  $result2 = $conn->query($tracks_list);
+
+  if ($result2->num_rows > 0) {
+    while($row = $result2->fetch_assoc()) {
+      if($row['albumID']==$album_id) {
+
+      $tracks_name[]=$row['name'];
+      $tracks_duration[]=$row['duration'];
+    }
+    }
+  }
 
   $tracks_list = "SELECT * FROM faixa";
   $result2 = $conn->query($tracks_list);
@@ -76,6 +90,7 @@ if (!isset($_POST["shopping_cart"])) {
 if (isset($_POST["shopping_cart"])) {
 
   $existe = false;
+  $terminado = false;
   $data= date("y.d.m");
   $album_name=$_SESSION['album_name'];
   $album_id=$_SESSION['album_id'];
@@ -85,8 +100,10 @@ if (isset($_POST["shopping_cart"])) {
   $price=$_SESSION['price'];
   $client_id=$_SESSION['cliente_id'];
   $cliente_saldo=$_SESSION['cliente_saldo'];
+  $stock=$_SESSION['stock'];
 
   $sum = 0;
+  if($stock>0) {
   $verify_cart_rows = "SELECT * FROM carrinho";
   $result_verify_rows = $conn->query($verify_cart_rows);
 
@@ -94,8 +111,10 @@ if (isset($_POST["shopping_cart"])) {
     // output data of each row
     while($row = $result_verify_rows->fetch_assoc()) {
       $sum+=1;
+      $terminado=$row['terminado'];
       if($album_id==$row['album_id']) {
         $existe=true;
+
       }
     }
   }
@@ -107,8 +126,8 @@ if (isset($_POST["shopping_cart"])) {
   $user = $_SESSION['user'];
     if(!$existe){
       echo "nao existe";
-      $insert = "INSERT INTO carrinho (id, data_transition,price,quantidade,album_id,client_id)
-      VALUES ('$sum','$data','$price',1,'$album_id','$client_id');";
+      $insert = "INSERT INTO carrinho (id, data_transition,price,quantidade,album_id,client_id,terminado)
+      VALUES ('$sum','$data','$price',1,'$album_id','$client_id',0);";
 
       if ($conn->query($insert) === TRUE) {
         echo "New connection successfull2";
@@ -118,7 +137,7 @@ if (isset($_POST["shopping_cart"])) {
 
 
 
-    } else{
+    } if($existe && !$terminado){
       echo "existe";
       $update_quantidade = "UPDATE carrinho
       SET quantidade=quantidade+1
@@ -129,7 +148,18 @@ if (isset($_POST["shopping_cart"])) {
         echo "Error: " . $update_quantidade . "<br>" . $conn->error;
       }
     }
+    if($existe && $terminado){
+      echo "existe";
+      $insert = "INSERT INTO carrinho (id, data_transition,price,quantidade,album_id,client_id,terminado)
+      VALUES ('$sum','$data','$price',1,'$album_id','$client_id',0);";
 
+      if ($conn->query($insert) === TRUE) {
+        echo "New connection successfull2";
+      } else {
+        echo "Error: " . $insert . "<br>" . $conn->error;
+      }
+    }
+}
 header('Location: '.'../views/album_page.php?id='.$_SESSION['id'].'&album_name='.$_SESSION['album_name']);
 
 }

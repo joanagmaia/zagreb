@@ -22,8 +22,11 @@
         <?php
         for($i=0;$i<count($name);$i++){
           ?>
+          <a href="album_page.php?id=<?php echo $_SESSION['id'];?>&album_name=<?php echo $name[$i];?>">
+
         <div class="listed_album_page pale-brown-bg">
           <h2 class="listed_album_page_name red"><?php echo $name[$i] ?></h2>
+
           <ul class="listed_album_page_info">
             <li class="listed_album_page_artist"></span><h4><?php echo $artist[$i] ?></h4></li>
             <div class="more-info-wrapper">
@@ -33,6 +36,7 @@
             </div>
           </ul>
         </div>
+      </a>
       <?php } ?>
       </div>
     </main>
